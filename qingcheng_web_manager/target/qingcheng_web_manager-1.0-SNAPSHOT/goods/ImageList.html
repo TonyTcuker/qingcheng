@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片列表</title>
+    <style>
+        .el-header, .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: left;
+            line-height: 60px;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 260px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div style="width: 70%;margin: 10px auto">
+            <el-container>
+                <el-header>
+                    <el-page-header @back="goBack" content="详情页面">
+                    </el-page-header>
+                </el-header>
+                <el-main>
+
+                    <el-dialog
+                            title="上传图片"
+                            :visible.sync="dialogVisible"
+                            width="30%"
+                            >
+
+                        <!--
+                            注意action请求路径如果需要用到变量，需要吧字符用单引号扩起来
+                        -->
+                        <div style="text-align: center">
+                            <el-upload
+                                    name="file"
+                                    class="upload-demo"
+                                    ref="upload"
+                                    :action="'/upload/oss2.do?fileFolder=test/album/'+albumId+'/images'"
+                                    :on-remove="handleRemove"
+                                    :on-success="uploadSuccess"
+                                    :before-upload="beforeAvatarUpload"
+                                    :auto-upload="true">
+                                <el-button slot="trigger" style="margin-left: 10px;" size="small" type="success" @click="submitUpload"  plain><i style="font-size: 15px" class="el-icon-upload"></i>选取文件</el-button>
+                                <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                            </el-upload>
+                        </div>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button @click="dialogVisible = false">取 消</el-button>
+                        </span>
+                    </el-dialog>
+
+                    <el-button size="small" type="primary" @click="dialogVisible=true"  plain><i style="font-size: 15px" class="el-icon-upload"></i>上传图片</el-button>
+
+                    <el-row :gutter="20">
+                        <el-col v-for="image in tableData" :span="6">
+                            <table>
+                                <tr style=";background-color: #f0f9f6">
+                                    <td>
+                                        <el-image
+                                                style="width: 200px; height: 200px;padding: 10px auto"
+                                                :src="image.url" >
+                                        </el-image>
+                                    </td>
+                                </tr>
+                                <tr style="background-color: #eaeeea">
+                                    <td>
+                                        <el-button size="mini" type="primary" plain>转移相册</el-button>
+                                        <el-button @click="deleteImage(image.uid)" size="mini" type="danger" plain>删除图片</el-button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </el-col>
+                    </el-row>
+                </el-main>
+            </el-container>
+        </div>
+    </div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/util.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                albumId:'',
+                tableData:[],
+                dialogVisible:false,// 打开弹窗
+                data:{}
+            }
+        },
+        created(){
+            this.initialization();
+        },
+        methods:{
+            goBack(){
+                location.href="album.html";
+            },
+            initialization(){
+                this.albumId = GetQueryString("id");
+
+                axios.get(`/album/findById.do?id=`+this.albumId).then(response=>{
+                    let parse ;
+                    if (response.data.imageItems!=''&&response.data.code !=1){
+                        parse = JSON.parse(response.data.imageItems); // 将JSON字符串转换成json对象
+                    } else {
+                        parse = [] ;
+                    }
+                    this.tableData = parse;
+                })
+            },
+            submitUpload() { // 文件上传调用
+                this.$refs.upload.submit();
+            },
+            handleRemove(file, fileList) { // 文件删除调用
+                console.log(file, fileList);
+            },
+            uploadSuccess(response){ // 文件上传成功调用 response 为文件上传的Controller返回值
+                let data = {} // 定义空对象
+                data.url = response ; // 设置路径
+                this.tableData.push(data);
+                axios.post(`/album/saveImage.do?albumId=`+this.albumId,this.tableData).then(response=>{
+                    this.initialization();
+                })
+            },
+            beforeAvatarUpload(file) { // 验证上传文件
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isJPG) {
+                    this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
+            },
+            deleteImage(uid){
+                axios.post(`/album/deleteImage.do?albumId=${this.albumId}&uid=${uid}`).then(response=>{
+                    if(response.data.code == 0){
+                        this.$message({
+                            message: '删除成功',
+                            type: 'success'
+                        });
+                        this.initialization();
+                    } else {
+                        this.$message({
+                            showClose: true,
+                            message: '错误！' + response.data.message,
+                            type: 'error'
+                        });
+                    }
+
+                })
+            }
+        }
+    })
+</script>
+</html>

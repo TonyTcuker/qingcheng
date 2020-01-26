@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品类目统计</title>
+    <script src="/js/echarts.js"></script>
+    <script>
+
+    </script>
+
+</head>
+<body>
+    <div id="app" style="text-align: center">
+        <template>
+            <!--
+                value-format="yyyy-MM-dd" 指定格式,可以将选择的日期转换成指定格式
+                @change 当用于选择当日期之后机会自动触发当事件
+            -->
+            <el-row type="flex" justify="center">
+                <el-col :span="6">
+                    <div class="block">
+                        <span class="demonstration">选择日期</span>
+                        <el-date-picker
+                                @change="findCategoryReport"
+                                v-model="selectDate"
+                                type="daterange"
+                                range-separator="至"
+                                start-placeholder="开始日期"
+                                value-format="yyyy-MM-dd"
+                                end-placeholder="结束日期">
+                        </el-date-picker>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <el-button type="primary" @click="findCategoryReport" round>查询</el-button>
+                </el-col>
+            </el-row>
+
+            <div v-show="tableData.length>0" id="main" style="width: 700px;height: 400px"></div>
+
+            <el-table
+                    :data="tableData"
+                    border
+                    style="width: 100%">
+                <el-table-column
+                        prop="categoryName"
+                        label="分类名称"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        prop="num"
+                        label="销售数量"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        label="销售数量比例"
+                        width="180">
+                    <template slot-scope="scope">
+                        <!-- 总得销售数量除以当前的销售数量为销售数量比例 -->
+                        <!-- 其中toFixed(保留小数) 为文本过滤器-->
+                        {{(scope.row.num/totalNum *100).toFixed(2)+' %'}}
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        prop="money"
+                        label="销售总金额"
+                        width="180">
+                    <template slot-scope="scope">
+                        {{'¥ '+scope.row.money/100}}
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="销售总金额比例"
+                        width="180">
+                    <template slot-scope="scope">
+                        <!--
+                            总得销售金额除以当前的销售金额为销售金额比例
+                            其中toFixed(保留小数) 为文本过滤器
+                        -->
+                        {{(scope.row.money/totalMoney *100).toFixed(2)+' %'}}
+                    </template>
+                </el-table-column>
+            </el-table>
+        </template>
+
+    </div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?208d8f0e308c18fcb576d4b75ea53a7f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+    new Vue({
+        el:"#app",
+        data(){
+            return({
+                tableData:[],
+                selectDate:[],
+                totalNum:0, // 保存总的销售数量
+                totalMoney:0, // 保存总的销售金额
+                categoryName:[], // 保存类目名称
+                NumData:[], // 保存num数据
+                MoneyData:[], // 保存销售额数量
+
+            })
+        },
+        methods:{
+            findCategoryReport(){
+                // 选择的日期，selectDate[0] 为起始日期，selectDate[1] 为结束日期
+                axios.get(`/categoryReport/category1Count.do?date1=${this.selectDate[0]}&date2=${this.selectDate[1]}`).then(response=>{
+                    this.tableData = response.data;
+                    this.totalNum = 0 ; // 需要初始化变量
+                    this.totalMoney = 0 ;
+
+                    for(let i = 0 ; i<this.tableData.length;i++){
+                        this.totalNum += this.tableData[i].num; // 计算总的销售数量
+                        this.totalMoney += this.tableData[i].money; // 计算总的销售金额
+                    }
+                    for (let i=0;i<this.tableData.length;i++){
+
+                        this.categoryName.push(this.tableData[i].categoryName); // 添加商品类目
+                        this.NumData.push({value:this.tableData[i].num,name:this.tableData[i].categoryName}); // 添加商品销售量图表数据
+                        this.MoneyData.push({value:this.tableData[i].money,name:this.tableData[i].categoryName}); // 添加商品销售金额表数量
+                    }
+                    let myChart = echarts.init(document.getElementById("main"));
+
+                    let option = { // 保存图标数据
+                        title : {
+                            text: '商品类目统计',
+                                x:'center'
+                        },
+                        tooltip : {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                                left: 'left',
+                                data: this.categoryName
+                        },
+                        series : [
+                            {
+                                name: '销售量',
+                                type: 'pie',
+                                radius : '55%',
+                                center: ['25%', '60%'],
+                                data:this.NumData,
+                                itemStyle: {
+                                    emphasis: {
+                                        shadowBlur: 1,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            },{
+                                name: '销售额',
+                                type: 'pie',
+                                radius : '55%',
+                                center: ['75%', '60%'],
+                                data:this.MoneyData,
+                                itemStyle: {
+                                    emphasis: {
+                                        shadowBlur: 1,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ]
+                    }
+
+                    myChart.setOption(option);
+                })
+            }
+        }
+    })
+</script>
+
+</html>

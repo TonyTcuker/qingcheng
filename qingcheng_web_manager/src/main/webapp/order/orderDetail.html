@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <style>
+        .el-header, .el-footer {
+            background-color: #8d909a;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: center;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 260px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="width: 80%;margin: 30px auto" >
+        <el-container direction="vertical">
+            <el-header>
+                <el-page-header @back="goBack" content="商品列表">
+
+                </el-page-header>
+            </el-header>
+
+            <el-main>
+                <el-row type="flex" class="row-bg">
+                    <el-col :span="3">
+                        <el-tag v-if="tableOrder1.orderStatus==0" type="warning">当前订单状态：未付款</el-tag>
+                        <el-tag v-else-if="tableOrder1.orderStatus==1" >当前订单状态：待发货</el-tag>
+                        <el-tag v-else-if="tableOrder1.orderStatus==2" >当前订单状态：已经发货</el-tag>
+                        <el-tag v-else-if="tableOrder1.orderStatus==3" type="success">当前订单状态：已完成</el-tag>
+                        <el-tag v-else-if="tableOrder1.orderStatus==4" type="danger">当前订单状态：已关闭</el-tag>
+                        <el-tag v-else type="danger">当前订单状态：异常状态</el-tag>
+                    </el-col>
+                </el-row>
+                <br><br>
+                <!--  基本信息表 -->
+                <template >
+                    <el-row type="flex" class="row-bg">
+                        <el-col :span="3"><span><i class="el-icon-s-order"></i>&nbsp;基本信息</span></el-col>
+                    </el-row>
+                    <br>
+                    <el-table
+                            :data="tableOrder"
+                            stripe
+                            style="width: 100%"
+                            border
+                            >
+                        <el-table-column
+                                prop="id"
+                                label="订单编号"
+                                width="180"
+                                height="14px" align="center"
+                                >
+                        </el-table-column>
+                        <el-table-column
+                                label="发货流水号"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                <span>暂时没有实现</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="username"
+                                label="用户名"
+                                width="180" align="center"
+                                height="14px">
+                        </el-table-column>
+                        <el-table-column
+                                label="支付方式"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                {{scope.row.payType == 0?'货到付款':scope.row.payType==1?'微信支付':scope.row.payType==2?'支付宝':scope.row.payType==3?'银联支付':'未知的支付方式'}}
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="订单来源"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                {{scope.row.sourceType == 1?'web客户端':scope.row.sourceType==2?'app客户端':scope.row.sourceType==3?'微信公众号':scope.row.sourceType==4?'微信小程序':'未知来源'}}
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="订单类型" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                普通订单
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                    <template>
+                        <el-table
+                                :data="tableOrder"
+                                border
+                                style="width: 100%">
+                            <el-table-column
+                                    label="配送方式" align="center"
+                                    width="180">
+                                <template slot-scope="scope">
+                                    <span>暂无</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                                    label="物流单号" align="center"
+                                    width="180">
+                                <template slot-scope="scope">
+                                    <span>{{scope.row.shippingCode!=null?scope.row.shippingCode:'暂无物流信息'}}</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                                    label="自动收货天数" align="center"
+                                    width="180">
+                                <template slot-scope="scope">
+                                    <span>15天</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                                    label="活动信息" align="center"
+                                    width="180">
+                                <template slot-scope="scope">
+                                    <span>暂无</span>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                    </template>
+                </template>
+
+                <!--  收货人信息表 -->
+                <template>
+                    <br><br><br><br>
+                    <el-row type="flex" class="row-bg">
+                        <el-col :span="3"><span><i class="el-icon-s-order"></i>&nbsp;收货人信息</span></el-col>
+                    </el-row>
+                    <br>
+                    <el-table
+                            :data="tableOrder"
+                            border
+                            style="width: 100%">
+                        <el-table-column
+                                prop="receiverContact"
+                                label="收货人" align="center"
+                                width="180">
+                        </el-table-column>
+                        <el-table-column
+                                prop="receiverMobile"
+                                label="手机号码" align="center"
+                                width="180">
+                        </el-table-column>
+                        <el-table-column
+                                label="邮政编码" align="center"
+                                width="180">
+                            <template slot-scope="scope">
+                                <span>暂无实现</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="receiverAddress"
+                                label="收货地址" align="center"
+                                width="180">
+                        </el-table-column>
+                    </el-table>
+                </template>
+
+
+
+                <!--商品信息-->
+                <template>
+                    <br><br><br><br>
+                    <el-row type="flex" class="row-bg">
+                        <el-col :span="3"><span><i class="el-icon-s-order"></i>&nbsp;商品信息</span></el-col>
+                    </el-row>
+                    <br>
+                    <el-table
+                            :data="orderItemAndSku"
+                            border
+                            style="width: 100%">
+                        <el-table-column
+                                label="商品图片" align="center"
+                                width="150">
+                            <template slot-scope="scope">
+                                <el-image
+                                        style="width: 100px; height: 100px"
+                                        :src="scope.row.sku.image"
+                                        fit="fit">
+                                </el-image>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="商品名称" header-align="center"
+                                width="300">
+                            <template slot-scope="scope">
+                                <span >{{scope.row.sku.name}}</span><br><br>
+                                <span>品牌名称：{{scope.row.sku.brandName}}</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="价格/货号" header-align="center"
+                                width="150">
+                            <template slot-scope="scope">
+                                <span >价格：¥{{scope.row.sku.price/100}}</span><br><br>
+                                <span >条码：{{scope.row.sku.sn!=''?scope.row.sn:'暂无货号'}}</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="属性"  align="center"
+                                width="80">
+                            <template slot-scope="scope">
+                                <span>{{scope.row.sku.spec}}</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="数量"  align="center"
+                                width="60">
+                            <template slot-scope="scope">
+<!--                                <span>{{tableOrderItemData[scope.$index].num}}</span>-->
+                                <span>{{scope.row.orderItem.num}}</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="库存"  align="center"
+                                width="80">
+                            <template slot-scope="scope">
+                                <span>{{scope.row.sku.num}}</span>
+                            </template>
+                        </el-table-column>
+
+
+                        <el-table-column
+                                label="小记"  align="center"
+                                >
+                            <template slot-scope="scope">
+<!--                                <p>¥{{tableOrderItemData[scope.$index].num * (tableOrderItemData[scope.$index].price/100)}}</p>-->
+<!--                                <p>¥{{tableOrderItemData[scope.$index].money /100}}</p>-->
+                                <p>¥{{scope.row.orderItem.money /100}}</p>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+
+                    <span style="font-size: 20px">
+                        合计：<span style="padding-right: 0px;color: red">¥{{tableOrder1.totalMoney / 100}}</span>
+                    </span>
+
+                </template>
+
+                <!--  费用信息表 -->
+                <template >
+                    <br><br><br><br>
+                    <el-row type="flex" class="row-bg">
+                        <el-col :span="3"><span><i class="el-icon-s-order"></i>&nbsp;费用信息</span></el-col>
+                    </el-row>
+                    <br>
+                    <el-table
+                            :data="tableOrder"
+                            stripe
+                            style="width: 100%"
+                            border
+                    >
+                        <el-table-column
+                                label="商品合计"
+                                width="180"
+                                height="14px" align="center">
+                            <template slot-scope="scope">
+                                ¥{{priceSum}}
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="运费"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                <span>{{scope.row.postFee}}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="优惠卷"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                <span>暂无实现</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="活动优惠"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                <span>暂无实现</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="优惠总金额"
+                                width="180" align="center"
+                                height="14px">
+                            <template slot-scope="scope">
+                                <span>{{scope.row.preMoney!=''?(scope.row.preMoney/100):0}}</span>
+                            </template>
+                        </el-table-column>
+
+                    </el-table>
+
+                    <template>
+                        <el-table
+                                :data="tableOrder"
+                                border
+                                style="width: 100%">
+                            <el-table-column
+                                    label="订单总金额" align="center"
+                                    width="180">
+                                <template slot-scope="scope">
+                                    <span style="color: red">¥{{ scope.row.totalMoney!='' ? (scope.row.totalMoney/100) : 0 }}</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                                    label="应付款金额" align="center"
+                                    width="180">
+                                <template slot-scope="scope">
+                                    <span style="color: red">¥{{scope.row.totalMoney!=''?scope.row.totalMoney/100-scope.row.preMoney/100:0}}</span>
+                                </template>
+                            </el-table-column>
+
+                        </el-table>
+                    </template>
+                </template>
+
+            </el-main>
+            <el-footer>感谢查询</el-footer>
+        </el-container>
+    </div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/util.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                orderId:0,
+                tableOrderItemData:[],
+                tableOrder:[],
+                tableOrder1:{},
+                skuData:[],
+                priceSum:0,
+                orderItemAndSku:[] // 保存orderItemAndSku对象数组
+            }
+        },
+        created(){
+            this.orderId = GetQueryString("id");
+            axios.get(`/order/findOrder.do?id=${this.orderId}`).then(response =>{
+                this.tableOrderItemData = response.data.orderItemList ;
+                this.tableOrder.push(response.data.order) ;
+                this.tableOrder1 = response.data.order
+
+                let i;
+                for(i=0;i<this.tableOrderItemData.length;i++){
+                    let skuId = this.tableOrderItemData[i].skuId;
+                    this.priceSum += (this.tableOrderItemData[i].price/100) * this.tableOrderItemData[i].num ;
+                    axios.get("/sku/findById.do?id="+skuId).then(response=>{
+
+                        this.skuData.push(response.data); // 保存数据
+                    })
+                }
+            })
+
+            axios.get(`/order/findOrderItemSku.do?id=${this.orderId}`).then(response=>{
+                this.orderItemAndSku = response.data ;
+                this.priceSum = 0 ;
+                for(let i=0;i<this.orderItemAndSku.length;i++){
+                    this.priceSum += this.orderItemAndSku[i].orderItem.money/100;
+                    this.orderItemAndSku[i].sku.spec = JSON.parse(this.orderItemAndSku[i].sku.spec);
+                    let specString = "";
+                    for(let key in this.orderItemAndSku[i].sku.spec){
+                        specString += key+":"+this.orderItemAndSku[i].sku.spec[key]+" ";
+                    }
+                    if (specString == ""){
+                        specString = "暂无属性";
+                    }
+                    this.orderItemAndSku[i].sku.spec = specString ;
+                }
+            })
+
+        },
+        methods:{
+            goBack() {
+                location.href="orderAndOrderItem.html"
+            }
+        }
+    })
+</script>
+</html>

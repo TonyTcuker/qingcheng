@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>权限选择</title>
+    <style>
+
+        .el-header, .el-footer {
+            background-color: #ccd9ea;
+            color: #333;
+            text-align: left;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: left;
+            line-height: 50px;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 260px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+
+
+        .app{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 30px;
+            left: 0px;
+            text-align: center;
+        }
+        .appMain{
+            play-during: auto;
+            width: 70%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="app" class="app">
+    <div class="appMain">
+        <el-container>
+            <el-header>
+                <span>当前角色:{{roleName}}</span>
+                <el-button size="mini" type="primary" plain @click="back">返回</el-button>
+            </el-header>
+            <el-main>
+                <!-- 循环resourceCombinationList数组 -->
+                <div v-for="head in resourceCombinationList" >
+                    <el-row :gutter="0">
+
+                        <div style="border : 0.1px solid #d6d1d1">
+                            <!-- 判断property属性 -->
+                            <span style="padding-left: 5px">
+                                        <el-checkbox :indeterminate="head.property.indeterminate" v-model="head.property.status" @change="selectResourceAll(head)">{{head.headResource.resName}}</el-checkbox>
+                                    </span>
+                        </div>
+
+                        <!-- 数据保存到选择数组中 -->
+                        <el-checkbox-group v-model="head.selectResourceIds">
+                            <!-- 循环子标签 -->
+                            <el-col :span="4" v-for="item in head.itemResource" :key="item.id">
+                                <div style="border : 0.1px solid #d6d1d1">
+                                        <span style="padding-left: 5px">
+                                            <el-checkbox  :label="item.id" @change="selectResource(head)">{{item.resName}}</el-checkbox>
+                                        </span>
+                                </div>
+                            </el-col>
+                        </el-checkbox-group>
+
+                    </el-row>
+                    <br>
+                </div>
+                <div style="text-align: center">
+                    <el-checkbox v-model="isSelectAll" @change="selectAll">全选</el-checkbox>
+                </div>
+                <div style="text-align: center">
+                    <el-button @click="saveSelectResource" type="primary">保存</el-button>
+                </div>
+            </el-main>
+        </el-container>
+    </div>
+
+
+</div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/util.js"></script>
+
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                roleId:0,// 保存角色Id
+                roleName:'未知角色', // 当前角色名称
+                resourceCombinationList:[],//保存所有的权限
+                isSelectAll:false, // 是否全选所有权限
+            }
+        },
+        created(){
+            let urlRoleId = null;
+            urlRoleId = GetQueryString("roleId");
+            if(urlRoleId== null){
+                // 查询全部权限数据
+                axios.get(`/resource/findAll.do`).then(response => {
+                    this.resourceCombinationList = response.data;
+                    this.initialization();
+                })
+            } else {
+                axios.get(`/role/findRoleResource.do?roleId=${urlRoleId}`).then(response=>{
+                    this.resourceCombinationList = response.data.resourceCombinationList ;
+                    this.roleId = response.data.roleId ;
+                    this.roleName = response.data.roleName ;
+                    this.initialization();
+                })
+            }
+
+        }
+        ,
+        methods:{
+            // 初始化数据
+            initialization(){
+                for (let i=0;i<this.resourceCombinationList.length;i++){
+
+                    let status = false ; // 保存是否点击了一级菜单
+                    let indeterminate = false ;
+                    let resourceCount = this.resourceCombinationList[i].itemResource.length; // 二级权限个数
+                    let selectCount = this.resourceCombinationList[i].selectResourceIds.length ; // 选择权限的个数
+
+
+                    if (selectCount == resourceCount){ // 角色全选
+                        status = true ;
+                        indeterminate = false ;
+                    } if (selectCount>0 && selectCount <resourceCount){ // 选择部分
+                        status = false ;
+                        indeterminate = true ;
+                    } else { // 没有选择
+                        status = false;
+                        indeterminate = false ;
+                    }
+
+
+                    // 保存一些属性，用于菜单全选
+                    let property = {
+                        status:status, // 是否点击一级菜单
+                        resourceCount:resourceCount, // 权限个数
+                        indeterminate:indeterminate, // 用于显示一级状态的不确定性
+                    }
+
+                    this.resourceCombinationList[i].property = property ; // 创建 property 对象
+
+                }
+            },
+            // 全选某一个级分类
+            selectResourceAll(resourceCombination){ //  接受resourceCombination 对象
+
+
+                this.isSelectAll = false ; // 关闭全选
+                resourceCombination.property.indeterminate = false; // 只要点击全选，未知状态就要关闭
+
+                let selectResourceIds = [] ;  //创建一个空当数组
+
+
+                if (resourceCombination.property.status){ // 判断是否点击了
+                    let data = resourceCombination.itemResource; // 取出二级权限数据
+                    for (let i=0;i<data.length;i++){
+                        selectResourceIds.push(data[i].id); // 添加二级所有的二级权限数据
+                    }
+                }
+
+                resourceCombination.selectResourceIds = selectResourceIds ; // 重新添加数据
+
+                console.log(resourceCombination);
+            }
+            ,
+            // 当点击某个权限触发，接收 resourceCombination 对象
+            selectResource(resourceCombination){
+
+                this.isSelectAll = false ; // 关闭全选
+
+                let resourceIds = resourceCombination.selectResourceIds ; // 取出选择的数据
+
+                let property = resourceCombination.property ;// 取出属性 对象
+                let resourceCount = property.resourceCount; // 取出子类权限数量
+
+
+                // 判断是选择权限数组否长度，看是否需要改变一级权限显示状态
+                if (resourceIds.length>0 && resourceIds.length<resourceCount){ // 如果大于0小于权限数组长度，说明没有选完
+                    property.indeterminate = true ;
+                } else if (resourceIds.length == resourceCount) { // 说明全部选择
+                    property.status = true ;
+                    property.indeterminate = false ;
+                } else { //没有选择权限
+                    property.status = false ; // 取消全选
+                    property.indeterminate = false ;
+                }
+            },
+            // 选择所有
+            selectAll(isAll){
+
+                this.initialization(); // 初始化数据
+
+                for (let i=0;i<this.resourceCombinationList.length;i++){ // 循环所有数据
+                    let resourceCombination = this.resourceCombinationList[i];
+
+                    let property = this.resourceCombinationList[i].property; // 取出属性
+                    let selectResourceIds = this.resourceCombinationList[i].selectResourceIds; // 取出选择数组
+
+                    selectResourceIds = [] ; //清空数据
+
+                    property.status = true ; // 设置以及全选按钮为按下
+                    property.indeterminate = false ;// 取消未知状态
+
+                    if (isAll){
+                        // 添加二级权限
+                        for(let x=0;x< resourceCombination.itemResource.length ; x++){
+                            selectResourceIds.push(resourceCombination.itemResource[x].id);
+                        }
+                    }
+
+                    this.resourceCombinationList[i].selectResourceIds = selectResourceIds ;
+
+                }
+            },
+            back(){ //跳转会原来页面
+              location.href = 'role.html' ;
+              console.log()
+            },
+            // 用于保存选择的权限
+            saveSelectResource(){
+                let selectResourceList = []; // 保存以及选择的Ids
+
+                // 集合所有的选择的selectresourceIds
+                for (let i=0;i<this.resourceCombinationList.length;i++){
+
+                    // 再次选好选中的ids数组
+                    let ids = this.resourceCombinationList[i].selectResourceIds;
+                    for (let y=0;y<ids.length;y++){
+                        selectResourceList.push(ids[y]);
+                    }
+                }
+
+                // 发送数据
+                axios.post(`/role/saveRoleAndResource.do?roleId=${this.roleId}`,selectResourceList).then(response=>{
+                    let data = response.data;
+                    if (data.code == 0){
+                       location.href="role.html";
+                    } else {
+                        this.$message.error(data.message);
+                    }
+                })
+            }
+
+        }
+    })
+</script>
+</html>

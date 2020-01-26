@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <!-- 开启方法注解 -->
+    <security:global-method-security pre-post-annotations="enabled"/>
+
+    <!-- 以下资源将可以匿名访问 -->
+    <security:http pattern="/login.html" security="none"/>
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/img/**" security="none"/>
+    <security:http pattern="/js/**" security="none"/>
+
+<!--    配置页面可以给所用用户访问 -->
+<!--    <security:http pattern="/**/*.html" security="none"/>-->
+
+    <!-- 配置页面访问规则 -->
+    <security:http>
+        <!-- 配置访问规则，以及需要什么角色能访问
+            配置了此/** 之后，之后的权限将不起作用
+        -->
+<!--        <security:intercept-url pattern="/**" access="hasAnyAuthorityrity('ROLE_ADMIN')"></security:intercept-url>-->
+
+
+        <!-- 基于URL的访问控制 -->
+        <!-- 所以的页面需要find_all 权限才能访问 -->
+        <security:intercept-url pattern="/**/*.html" access="hasAuthority('find_all')"/>
+
+        <!-- hasAnyAuthority 表示拥有任意权限即可访问 -->
+        <security:intercept-url pattern="/**/find*.do" access="permitAll()"/>
+
+        <!-- hasAuthority 表示拥有指定权限即可访问 -->
+        <security:intercept-url pattern="/brand/*.do" access="hasAuthority('brand')"/>
+
+        <!-- hasAnyAuthority 传递参数，则表示拥有指定权限其中一个即可访问 -->
+<!--        <security:intercept-url pattern="/spec/*.do" access="hasAnyAuthority('spec_edit','spec_add')"/>-->
+
+
+        <!-- 配置默认登录页，登录成功首页，登录错误页
+            authentication-success-handler-ref 配置登录成功处理器，default-target-url将失效
+        -->
+        <security:form-login
+                default-target-url="/main.html"
+                login-page="/login.html"
+                authentication-failure-url="/login.html"
+                authentication-success-handler-ref="AuthenticationSuccess"
+        />
+
+        <!-- 退出登录，默认退出登录地址/logout -->
+        <security:logout/>
+
+        <!-- 关闭csrf跨站伪造请求 -->
+        <security:csrf disabled="true"/>
+
+        <security:headers>
+            <!--
+                DENY：浏览器拒绝当前页面加载任何Frame页面
+                SAMEORIGIN：frame页面的地址只能为同源域名下的页面
+                ALLOW-FROM：origin为允许frame加载的页面地址。
+            -->
+            <security:frame-options policy="SAMEORIGIN"></security:frame-options>
+        </security:headers>
+
+    </security:http>
+
+    <!-- 登录认证 -->
+    <security:authentication-manager>
+        <!-- 配置登录服务提供者 -->
+        <security:authentication-provider user-service-ref="UserDetailServiceImpl">
+
+            <!--添加密码加密方式-->
+            <security:password-encoder ref="BCryptEncoding"/>
+
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <!-- 必须要在xml文件中配置，因为xml配置bean比注解配置优先级高，所以会存在读取到配置文件的时候，bean还没有加入到容器中 -->
+    <bean id="UserDetailServiceImpl" class="com.qingcheng.controller.UserDetailsServiceImpl"/>
+
+    <!-- 指定密码加密方式 -->
+    <bean id="BCryptEncoding" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
+    <!-- 登录成功处理器 -->
+    <bean id="AuthenticationSuccess" class="com.qingcheng.controller.AuthenticationSuccessHandlerImpl"/>
+</beans>

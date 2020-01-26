@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>role管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- 上传图片框样式，不使用上传组件可以删除此样式 -->
+    <style>
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .avatar-uploader .el-upload:hover {
+            border-color: #409EFF;
+        }
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 150px;
+            height: 70px;
+            line-height: 150px;
+            text-align: center;
+        }
+        .avatar {
+            width: 150px;
+            height: 70px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body class="hold-transition">
+<div id="app">
+
+    <div class="content-header">
+        <h1>管理<small>role管理</small></h1>
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>管理</el-breadcrumb-item>
+            <el-breadcrumb-item>role管理</el-breadcrumb-item>
+        </el-breadcrumb>
+    </div>
+
+    <div class="app-container">
+        <div class="box">
+            <div class="filter-container">
+                <!--查询表单-->
+                <el-form :inline="true" >
+                    <el-form-item label="角色名称">
+                        <el-input v-model="searchMap.name" placeholder="角色名称" class="filter-item" ></el-input></el-form-item>
+
+                    <el-button class="dalfBut" @click="fetchData()">查询</el-button>
+                    <el-button type="primary"  class="butT" @click="formVisible=true;pojo={}">新增</el-button>
+                </el-form>
+            </div>
+
+            <el-table :data="tableData" border style="width: 100%" >
+
+                <el-table-column prop="name" label="角色名称" width="200" align="center"></el-table-column>
+                <el-table-column prop="detail" label="介绍" width="300" align="center"></el-table-column>
+                <el-table-column prop="countAdmin" label="成员数量" width="80" align="center"></el-table-column>
+
+                <el-table-column label="是否启用" width="80" align="center">
+                    <template slot-scope="scope">
+                        <el-switch
+                                v-model="scope.row.status"
+                                active-color="#13ce66"
+                                inactive-color="#ff4949"
+                                active-value="1"
+                                inactive-value="0">
+                        </el-switch>
+                    </template>
+                </el-table-column>
+                <el-table-column prop="createTime" label="添加时间" width="210" align="center"></el-table-column>
+
+                <el-table-column
+                        label="操作"  >
+                    <template slot-scope="scope">
+                        <el-button @click="selectResource(scope.row.id)" size="mini" type="primary" size="small">权限设置</el-button>
+                        <el-button @click="edit(scope.row.id)" size="mini" type="primary" size="small">修改</el-button>
+                        <el-button @click="dele(scope.row.id)" size="mini" type="danger" size="small">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+            <div class="pagination-container">
+                <el-pagination
+                        class="pagiantion"
+                        @size-change="fetchData"
+                        @current-change="fetchData"
+                        :current-page.sync="currentPage"
+                        :page-sizes="[10, 20, 30, 40]"
+                        :page-size="size"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="total">
+                </el-pagination>
+            </div>
+            <div class="add-form">
+                <!--弹出窗口-->
+                <el-dialog  title="编辑" :visible.sync="formVisible" >
+                    <el-form label-width="80px" :model="pojo" ref="pojo" :rules="rules" status-icon>
+                        <el-form-item label="角色名称" prop="name">
+                            <el-input v-model="pojo.name"></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="角色描述" prop="detail">
+                            <el-input v-model="pojo.detail"></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="是否启用">
+                            <el-switch
+                                    v-model="pojo.status"
+                                    active-color="#13ce66"
+                                    inactive-color="#ff4949"
+                                    active-value="1"
+                                    inactive-value="0">
+                            </el-switch>
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="save('pojo')">保存</el-button>
+                            <el-button @click="formVisible = false" >关闭</el-button>
+                        </el-form-item>
+                    </el-form>
+                </el-dialog>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/elementui.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            let validateName = (rule, value, callback) => {
+                if (value == null || value == '' ) {
+                    callback(new Error('请输入角色名称'));
+                } else if (value.length < 2)  {
+                    callback(new Error('长度必须大于2个字'));
+                } else {
+                    callback();
+                }
+            };
+
+            let validateDetail = (rule, value, callback) => {
+                if (value == null || value == '') {
+                    callback(new Error('请输入角色描述'));
+                } else if (value.length < 3)  {
+                    callback(new Error('长度必须大于3个字'));
+                } else {
+                    callback();
+                }
+            };
+
+            return {
+                tableData: [],
+                currentPage: 1,
+                total: 10,
+                size: 10,
+                searchMap: {},
+                pojo: {
+                    name:'',
+                    detail:'',
+                    status:0,
+                },
+                formVisible: false,
+                imageUrl: '',
+
+
+                rules: { // 用于表单验证
+                    name: [
+                        {required:true, validator: validateName, trigger: 'blur' }
+                    ],
+                    detail: [
+                        {required:true, validator: validateDetail, trigger: 'blur' }
+                    ]
+                }
+
+            }
+        },
+        created(){
+            this.fetchData();
+        },
+        methods:{
+            fetchData (){
+                axios.post(`/role/findPage.do?page=${this.currentPage}&size=${this.size}`,this.searchMap).then(response => {
+                    this.tableData = response.data.rows;
+                    this.total = response.data.total;
+                });
+            },
+            save (formName){
+
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        axios.post(`/role/${this.pojo.id==null?'add':'update'}.do`,this.pojo).then(response => {
+                            this.fetchData (); //刷新列表
+                            this.formVisible = false ;//关闭窗口
+                        });
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+
+
+
+
+            },
+            edit (id){
+                this.formVisible = true // 打开窗口
+                // 调用查询
+                axios.get(`/role/findById.do?id=${id}`).then(response => {
+                    this.pojo = response.data;
+                    // this.imageUrl=this.pojo.image //显示图片  如页面有图片上传功能放开注释
+                })
+            },
+            dele (id){
+                this.$confirm('会强制移出拥有此角色的管理员权限?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then( () => {
+                    axios.get(`/role/delete.do?id=${id}`).then(response => {
+                        this.fetchData (); //刷新列表
+                    })
+                })
+            },
+            // 跳转到权限设置，传递选择到Id
+            selectResource(roleId){
+                location.href = "selectResource.html?roleId="+roleId ;
+            }
+            /* ****图片上传相关代码  如页面有图片上传功能放开注释 ****
+            handleAvatarSuccess(res, file) {
+                this.imageUrl = file.response;
+            },
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isJPG) {
+                    this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
+            }*/
+        }
+    })
+</script>
+</html>

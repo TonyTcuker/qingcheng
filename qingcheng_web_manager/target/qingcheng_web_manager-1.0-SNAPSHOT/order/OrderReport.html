@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单统计表</title>
+    <style>
+        .table_01{
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-color: rgba(120, 185, 199, 0.6);
+            margin-left: 0px;
+            text-align: center;
+        }
+        .tdHead{
+            color: rgba(8, 7, 8, 0.6);
+            background-color: rgba(117, 178, 187, 0.6);
+            width: 120px;
+            height: 40px;
+        }
+        .tdData{
+            color: rgba(23, 23, 23, 0.6);
+            width: 120px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <el-date-picker
+                @change="findDate"
+                v-model="selectDate"
+                value-format="yyyy-MM-dd"
+                type="daterange"
+                range-separator="至"
+                start-placeholder="开始日期"
+                end-placeholder="结束日期">
+        </el-date-picker>
+        <el-button type="primary" @click="setView_02(7)" plain>近7天</el-button>
+        <el-button type="primary" @click="setView_02(30)" plain>近一个月</el-button>
+        <el-button type="primary" @click="setView_02(90)" plain>近三个月</el-button>
+        <el-button type="primary" @click="setView_02(180)" plain>近半年</el-button>
+        <div style="text-align: left">
+
+        </div>
+        <br>
+
+
+        <el-row :gutter="20">
+            <el-col :span="10">
+                <table v-if="isTable" border="2" class="table_01">
+                    <tr>
+                        <td class="tdHead">浏览人数</td>
+                        <td class="tdHead">下单人数</td>
+                        <td class="tdHead">订单数</td>
+                        <td class="tdHead">下单件数</td>
+                        <td class="tdHead">有效订单数</td>
+                        <td class="tdHead">下单金额</td>
+                    </tr>
+                    <tr>
+                        <td class="tdData">{{tableData.people}}</td>
+                        <td class="tdData">{{tableData.peopleOrder}}</td>
+                        <td class="tdData">{{tableData.orderNum}}</td>
+                        <td class="tdData">{{tableData.itemNUm}}</td>
+                        <td class="tdData">{{tableData.validOrder}}</td>
+                        <td class="tdData">{{'¥ '+ tableData.totalMoney/100 }}</td>
+                    </tr>
+                    <tr>
+                        <td class="tdHead">退款金额</td>
+                        <td class="tdHead">付款人数</td>
+                        <td class="tdHead">付款订单数</td>
+                        <td class="tdHead">付款件数</td>
+                        <td class="tdHead">付款金额</td>
+                        <td class="tdHead">客单价</td>
+                    </tr>
+                    <tr>
+                        <td class="tdData">{{'¥ '+ tableData.returnMoney/100 }}</td>
+                        <td class="tdData">{{tableData.peoplePay}}</td>
+                        <td class="tdData">{{tableData.orderPay}}</td>
+                        <td class="tdData">{{tableData.itemPay}}</td>
+                        <td class="tdData">{{'¥ '+ tableData.moneyPay/100 }}</td>
+                        <td class="tdData">{{'¥ '+( tableData.moneyPay/100 / tableData.peoplePay ).toFixed(2)}}</td>
+                    </tr>
+                </table>
+            </el-col>
+            <el-col :span="3">
+                <div id="view_01" style="width: 600px;height:400px;"></div>
+            </el-col>
+<!--            <el-col :span="12">-->
+<!--                <div id="view_02" style="width: 100%;height: 400px;background-color: #9fcae6">-->
+<!--                </div>-->
+<!--            </el-col>-->
+<!--            <el-col :span="12">-->
+<!--                <div id="view_03" style="width: 100%;height: 400px;background-color: #c4e653">-->
+<!--                </div>-->
+<!--            </el-col>-->
+        </el-row>
+
+
+
+        <div>
+            <el-row>
+                <el-col :span="11">
+                    <div id="view_02" style="width: 100%;height: 400px">
+                    </div>
+                </el-col>
+                <el-col :span="11">
+                    <div id="view_03" style="width: 100%;height: 400px">
+
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+
+
+
+    </div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/echarts.js"></script>
+<script src="/js/util.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                isTable:false, // 显示table图表数据
+                tableData:[], // 保存图表聚合统计数据
+                selectDate:[], // 保存选择的日期
+                data:[], // 保存统计数据
+            }
+        },
+        created(){
+            let day = 7 ;
+            this.setView_02(7);
+        },
+
+    methods:{
+        findDate(){// 日期触发
+            axios.get(`/orderReport/orderReportCount.do?date1=${this.selectDate[0]}&date2=${this.selectDate[1]}`).then(response=>{
+                this.tableData = response.data ;
+                if (response.data.code==1||response.data==null){
+
+                }else{
+                    this.setView_01(); // 设置漏斗图
+                }
+            })
+        },
+        setView_01(){ // 设置view_01（漏斗图）的配置
+            this.isTable = true ;
+            let myChart = echarts.init(document.getElementById("view_01"));
+
+            let people = this.tableData.people; // 浏览人数
+            let peopleOrder = this.tableData.peopleOrder; // 下单人数
+            let peoplePay = this.tableData.peoplePay; // 付款人数
+
+
+            let showData = ['浏览','下单','付款'] ;//统计的图例
+            let showDataValue = [ // 显示列表
+                {value: people, name: '浏览'},
+                {value: peopleOrder, name: '下单'},
+                {value: peoplePay, name: '付款'},
+            ] ;
+
+            let option = {
+                title: {
+                    text: '订单统计图',
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/> {b} : {c}人 <br/> 比例 : {d}%"
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {readOnly: false},
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                legend: {
+                    data: showData
+                },
+                calculable: true,
+                series: [
+                    {
+                        animationDuration:500,
+                        animationDelay:500,
+                        name:'订单统计图',
+                        type:'funnel',
+                        left: '10%',
+                        top: 70,
+                        //x2: 80,
+                        bottom: 60,
+                        width: '50%',
+                        // height: {totalHeight} - y - y2,
+                        //min: peoplePay,
+                        //max: people,
+                        minSize: '0%',
+                        maxSize: '100%',
+                        sort: 'none',
+                        gap: 2,
+                        label: {
+                            show: true,
+                            position: 'inside'
+                        },
+                        labelLine: {
+                            show:true,
+                            length: 10,
+                            lineStyle: {
+                                width: 1,
+                                type: 'solid'
+                            }
+                        },
+                        itemStyle: {
+                            borderColor: '#000000',
+                            borderWidth: 1
+                        },
+                        emphasis: {
+                            label: {
+                                fontSize: 20
+                            }
+                        },
+                        data: showDataValue
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        },
+        setView_02(day) { //传递指定天数 设置订单折线图 配置
+
+            let date = formatTime(new Date(new Date().setDate(new Date().getDate()-day))); // 近一年数据
+
+
+            this.selectDate[0] = date; // 设置选择起始日期
+            this.selectDate[1] = formatTime(new Date()); //设置选择结束日期
+            this.findDate(); // 更新统计数据
+
+            axios.get(`/orderReport/findDateToday.do?date=${date}`).then(response=>{ // 获取数据
+                this.data = response.data ;
+                let data = this.data ;
+
+                let moneyPayView = []; // 付款金额
+                let returnMoneyView = []; // 退款金额
+                let peoplePayView = []; // 付款人数
+                let ItemPay = [] ; // 付款商品数量
+
+                let OrderConversion=[]; // 下单转化率
+                let PaymentConversion=[];// 付款转化率
+                let Conversion=[] ; // 成交转换率
+
+
+                let dateList = getDateList(day); // 获取日期数组
+
+                for (let i=0;i<dateList.length;i++){
+                    let isMark = true ; // 用于判断是否需要添加0数据
+                    for (let k=0 ;k<data.length;k++){
+
+                        data[k].countDate = data[k].countDate.substr(0,10); // 需要去除日期字符串中的时间
+
+                        if (dateList[i] == data[k].countDate){ // 如果日期相同
+                            moneyPayView.push([dateList[i],data[k].moneyPay/100]); // 设置付款金额
+                            returnMoneyView.push([dateList[i],data[k].returnMoney/100]); // 设置退款金额
+                            peoplePayView.push([dateList[i],data[k].peoplePay]); // 设置付款人数
+                            ItemPay.push([dateList[i],data[k].itemPay]); // 设置商品数量
+
+                            OrderConversion.push([dateList[i],((data[k].peopleOrder/data[k].people)*100).toFixed(2) ]); //下单转换率 = 下单人数/浏览人数
+                            PaymentConversion.push([dateList[i],((data[k].peoplePay/data[k].peopleOrder)*100).toFixed(2) ]); // 付款转化率 = 付款人数 / 下单人数
+                            Conversion.push([dateList[i],((data[k].peoplePay/data[k].people)*100).toFixed(2) ]); // 成交转化率 = 付款人数 / 浏览人数
+
+                            isMark = false; // 如果添加类折线图数据，那么不需要添加0数据
+                            break;
+                        }
+                    }
+                    if (isMark){
+                        //没有数据设置为零
+                        moneyPayView.push([dateList[i],0]);
+                        returnMoneyView.push([dateList[i],0]);
+                        peoplePayView.push([dateList[i],0]);
+                        ItemPay.push([dateList[i],0]);
+
+                        OrderConversion.push([dateList[i],0]);
+                        PaymentConversion.push([dateList[i],0]);
+                        Conversion.push([dateList[i],0]);
+                    }
+                }
+
+                let legend = ['付款金额','退款金额','付款人数','付款件数'] ; // 保存图例
+
+                // 订单统计数据折线图
+                let option = {
+                    width: '100%',
+                    title: {
+                        text: '订单统计'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:legend
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'time',
+                        boundaryGap: false,
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [
+                        {
+                            name:legend[0],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:moneyPayView
+                        },{
+                            name:legend[1],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:returnMoneyView
+                        },{
+                            name:legend[2],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:peoplePayView
+                        },{
+                            name:legend[3],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:ItemPay
+                        }
+                    ]
+                };
+                let myChart = echarts.init(document.getElementById("view_02"));
+                myChart.setOption(option);
+
+                legend = ['下单转化率','付款转化率','成交转换率'] ;
+                // 订单转化率折线图
+                let option2 = {
+                    width: '100%',
+                    title: {
+                        text: '订单转化率'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                    },
+                    legend: {
+                        data:legend
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'time',
+                        boundaryGap: false,
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name:'转换率(%)'
+                    },
+                    series: [
+                        {
+                            name:legend[0],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:OrderConversion
+                        },{
+                            name:legend[1],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:PaymentConversion
+                        },{
+                            name:legend[2],
+                            type:'line',
+                            animationDuration:2000,
+                            animationDurationUpdate:2000,
+                            data:Conversion
+                        }
+                    ]
+                };
+                let mychart2 = echarts.init(document.getElementById("view_03"));
+                mychart2.setOption(option2);
+            })
+        }
+    }
+    })
+</script>
+</html>

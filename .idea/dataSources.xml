@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@localhost_docker_MacBook" uuid="da869db9-fbcc-4c55-b5a8-2254e287393f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/qingcheng_system</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@localhost_docker_IMac" uuid="e5eb0bdf-ce77-4f6b-92bf-73af605358f6">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://192.168.0.101:3306/qingcheng_system</jdbc-url>
+    </data-source>
+  </component>
+</project>

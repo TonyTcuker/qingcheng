@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量发货</title>
+    <style>
+        .el-header, .el-footer {
+            background-color: #dde4d7;
+            color: #333;
+            /*text-align: left;*/
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: left;
+            line-height: 50px;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 260px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="width: 80%;margin: 30px auto">
+        <el-container>
+            <el-header>批量发货</el-header>
+
+            <el-main>
+                <span><i class="el-icon-s-order"></i> 批量发货</span><br>
+                <template >
+                    <el-table
+                            :data="tableData"
+                            border
+                            style="width: 100%">
+                        <el-table-column
+                                prop="id"
+                                align="center"
+                                label="iD"
+                                width="200">
+                        </el-table-column>
+                        <el-table-column
+                                prop="receiverContact"
+                                align="center"
+                                label="收货人"
+                                width="100">
+                        </el-table-column>
+                        <el-table-column
+                                prop="receiverMobile"
+                                align="center"
+                                label="手机号码"
+                                width="150">
+                        </el-table-column>
+                        <el-table-column
+                                align="center"
+                                label="邮政编码"
+                                width="150">
+                            <template slot-scope="scope">
+                                <span>暂时为实现</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="receiverAddress"
+                                align="center"
+                                label="收货地址"
+                                width="300">
+                        </el-table-column>
+                        <el-table-column
+                                align="center"
+                                label="配送方式"
+                                width="150">
+                            <template slot-scope="scope">
+                                <el-select v-model="scope.row.shippingName" filterable placeholder="选择物流公司">
+                                    <el-option
+                                            v-for="item in Logistics"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                    </el-option>
+                                </el-select>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                align="center"
+                                label="物流单号"
+                                >
+                            <template slot-scope="scope">
+                                <el-input
+                                        placeholder="输入物流单号"
+                                        v-model="scope.row.shippingCode"
+                                        clearable>
+                                </el-input>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </template>
+
+                <div style="text-align: center">
+                    <el-button @Click="backOrderList" round>取消</el-button>
+                    <el-button @Click="updateOrderInfo" type="primary" round>确定</el-button>
+                </div>
+            </el-main>
+
+        </el-container>
+    </div>
+</body>
+
+<script src="/js/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/axios.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                tableData:[],
+                Logistics:["顺丰快递","京东快递","韵达快递"], // 保存物流公司
+            }
+        },
+        created(){
+            let ids = GetQueryString("ids");
+            axios.post("/order/findSlipByIds.do?ids="+ids).then(response=>{
+                this.tableData = response.data;
+            })
+        },
+        methods:{
+            updateOrderInfo(){ // 向后端发送发货数据方法
+                console.log(this.tableData)
+                axios.post("/order/updateSlip.do",this.tableData).then(response=>{
+                    if (response.data.code==1){ // 执行失败
+                        this.$message.error({
+                            duration:5000,
+                            showClose:true,
+                            message:response.data.message
+                        });
+                    }else if (response.data.code==0){
+                        this.backOrderList(); // 返回页面
+                    }
+                })
+            },
+            backOrderList(){ // 返回订单列表
+                location.href="orderAndOrderItem.html"
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- 上传图片框样式，不使用上传组件可以删除此样式 -->
+    <style>
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .avatar-uploader .el-upload:hover {
+            border-color: #409EFF;
+        }
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 150px;
+            height: 70px;
+            line-height: 150px;
+            text-align: center;
+        }
+        .avatar {
+            width: 150px;
+            height: 70px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body class="hold-transition">
+<div id="app">
+
+    <div class="content-header">
+        <h1>管理<small>admin管理</small></h1>
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>管理</el-breadcrumb-item>
+            <el-breadcrumb-item>admin管理</el-breadcrumb-item>
+        </el-breadcrumb>
+    </div>
+
+    <div class="app-container">
+        <div class="box">
+            <div class="filter-container">
+                <!--查询表单-->
+                <el-form :inline="true" >
+                    <el-form-item label="用户名">
+                        <el-input v-model="searchMap.loginName" placeholder="用户名" class="filter-item" ></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="角色">
+                        <el-input v-model="searchMap.roleName" placeholder="角色" class="filter-item" ></el-input>
+                    </el-form-item>
+
+                    <el-button class="dalfBut" @click="fetchData()">查询</el-button>
+                    <el-button type="primary"  class="butT" @click="isAdd=true;formVisible=true;resetRuleForm()">新增</el-button>
+                </el-form>
+            </div>
+
+            <el-table :data="tableData" border style="width: 100%">
+
+                <el-table-column prop="loginName" label="登录账号" width="130" align="center"></el-table-column>
+                <el-table-column label="角色" width="300" align="center">
+                    <template slot-scope="scope">
+                        <span v-for="item in scope.row.roleList">{{item.name}}&nbsp;</span>
+                    </template>
+                </el-table-column>
+                <el-table-column prop="createTime" label="创建时间" width="200" align="center"></el-table-column>
+                <el-table-column prop="lastTime" label="最后登录" width="200" align="center">
+                    <template slot-scope="scope">
+                        {{scope.row.lastTime==null?'这个管理员没有登录':scope.row.lastTime}}
+                    </template>
+                </el-table-column>
+
+                <el-table-column label="状态" width="80" align="center">
+                    <template slot-scope="scope">
+                        <el-switch
+                                @change="changeSwitch(scope.row)"
+                                v-model="scope.row.status"
+                                active-color="#13ce66"
+                                inactive-color="#ff4949"
+                                active-value="1"
+                                inactive-value="0">
+                        </el-switch>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="操作"  >
+                    <template slot-scope="scope">
+                        <el-button @click="isAdd=false;edit(scope.row)" size="mini" type="primary" size="small">修改</el-button>
+                        <el-button @click="dele(scope.row.adminId)" size="mini" type="danger" size="small">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+
+            <div class="pagination-container">
+                <el-pagination
+                        class="pagiantion"
+                        @size-change="fetchData"
+                        @current-change="fetchData"
+                        :current-page.sync="currentPage"
+                        :page-sizes="[10, 20, 30, 40]"
+                        :page-size="size"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="total">
+                </el-pagination>
+            </div>
+
+            <div class="add-form">
+
+                <!--弹出窗口-->
+                <el-dialog   title="编辑" :visible.sync="formVisible" >
+
+                    <!--
+                        model 设置表单对象，表单校验需要设置
+                        ref 需要设置成表单对象，否则检验会报异常
+                        rules 校验规则
+                     -->
+                    <el-form :model="ruleForm" label-width="80px" :rules="rules" ref="ruleForm">
+                        <el-form-item label="用户名" prop="loginName">
+                            <el-input v-model="ruleForm.loginName"></el-input>
+                        </el-form-item>
+
+                        <!--
+                            prop 校验规则对象中到属性
+                         -->
+                        <el-form-item v-if="isAdd" label="登录密码" prop="password">
+                            <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item v-if="isAdd" label="确认密码" prop="checkPass">
+                            <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="是否启用">
+                            <el-switch
+                                    v-model="ruleForm.status"
+                                    active-color="#13ce66"
+                                    inactive-color="#ff4949"
+                                    active-value="1"
+                                    inactive-value="0">
+                            </el-switch>
+                            &nbsp;{{ruleForm.status==0?'不启用':'启用'}}
+                        </el-form-item>
+
+
+                        <!--
+                            如果需要通过select传递对象的话，需要加入一个属性 value-key，其中值必须是唯一，例如Id
+                            让后在option中的：value 中直接传递item即可，key为item的属性名，value为属性内容
+                         -->
+                        <el-form-item label="选择角色" prop="roleList">
+                            <el-select
+                                    v-model="ruleForm.roleList"
+                                    value-key="id"
+                                    multiple
+                                    filterable
+                                    default-first-option
+                                    placeholder="请选择角色">
+                                <el-option
+                                        v-for="item in findRoleList"
+                                        :key="item.id"
+                                        :label="item.name"
+                                        :value="item">
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="save('ruleForm')">{{isAdd?'创建':'修改'}}</el-button>
+                            <el-button @click="formVisible = false" >关闭</el-button>
+                        </el-form-item>
+                    </el-form>
+                </el-dialog>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/elementui.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+
+            //校验密码
+            let validatePass = (rule, value, callback) => { // 检验新密码
+                if (value === '') {
+                    callback(new Error('请输入密码'));
+                } else {
+                    if (this.ruleForm.checkPass !== '') {
+                        this.$refs.ruleForm.validateField('checkPass');
+                    }
+                    callback();
+                }
+            };
+
+            // 校验二次密码是否一致
+            let validatePass2 = (rule, value, callback) => { // 检验二次密码是否输入一致
+                if (value === '') {
+                    callback(new Error('请再次输入密码'));
+                } else if (value !== this.ruleForm.password) {
+                    callback(new Error('两次输入密码不一致!'));
+                } else {
+                    callback();
+                }
+            };
+
+
+            // 校验名称
+            let checkAdminName = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('用户名不能为空'));
+                } else {
+                    callback();
+                }
+            };
+
+            // 校验角色选择
+            let checkSelectRole = (rule, value, callback) => { // 检验二次密码是否输入一致
+                if (value.length === 0) {
+                    callback(new Error('至少选择一个角色'));
+                } else {
+                    callback();
+                }
+            };
+
+            return {
+                // 表单验证
+                ruleForm: {  //表单对象
+                    adminId:'', // 管理员Id
+                    loginName:'', //登录用户名
+                    password: '', // 密码
+                    checkPass: '', // 确认密码
+                    status:'1', // 用户状态
+                    roleList:[], // roleId集合
+                },
+
+                /**
+                 * trigger 为触发情况，blur为失去焦点触发，change为提交表单触发
+                 * required:true 表示为必须填字段，名称前面会有一个小小星星
+                 **/
+                rules: { // 校验规则对象
+                    loginName:[
+                        {required:true,validator:checkAdminName ,trigger:'blur'}
+                    ],
+                    password: [
+                        {required:true, validator: validatePass, trigger: 'blur' }
+                    ],
+                    checkPass: [
+                        {required:true, validator: validatePass2, trigger: 'blur' }
+                    ],
+                    roleList:[
+                        {required:true, validator: checkSelectRole , trigger:'blur'}
+                    ]
+                },
+
+                tableData: [],
+                currentPage: 1,
+                total: 10,
+                size: 10,
+                searchMap: {},
+                pojo: {},
+                formVisible: false,
+                imageUrl: '',
+                isAdd:true, // 用于区别 是添加还是修改
+                selectRoleList:[],//选择到角色
+                findRoleList:[],//查询到角色
+
+            }
+        },
+        created(){
+            this.fetchData();
+        },
+        methods:{
+
+            submitForm(formName) { // 提交表单
+
+                this.$refs[formName].validate((valid) => {
+                    if (valid) { // 验证通过
+
+                        return true ;
+                    } else { // 验证不通过
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+            },
+
+            resetForm(formName) { // 重置所有属性
+                this.$refs[formName].resetFields();
+            },
+
+
+            fetchData (){
+                axios.post(`/admin/findPage.do?page=${this.currentPage}&size=${this.size}`,this.searchMap).then(response => {
+                    this.tableData = response.data.rows;
+                    this.total = response.data.total;
+                });
+
+                axios.get('/role/findAll.do').then(response=>{ // 查询role角色列表
+                    this.findRoleList = response.data;
+                })
+            },
+            save (formName){
+
+                this.$refs[formName].validate((valid) => {
+                    if (valid) { // 验证通过
+
+                        axios.post(`/admin/${this.isAdd?'add':'update'}.do`,this.ruleForm).then(response=>{
+                            let data = response.data;
+
+                            if (data.code==0){ // 方法执行成功
+                                this.$message({
+                                    showClose:true,
+                                    message: this.isAdd?'用户创建成功':'修改成功',
+                                    type: 'success'
+                                });
+                                this.resetRuleForm(); // 清空表单数据
+                                this.fetchData() ; // 跟新数据
+                                this.formVisible = false ;  // 关闭弹窗
+
+                            } else { // 方法执行失败
+                                this.$alert(data.message, this.isAdd?'管理员创建失败':'修改失败', {
+                                    confirmButtonText: '确定',
+                                });
+                            }
+                        }).catch(error=>{ // 请求发送失败
+                            this.$alert('未知的错误', this.isAdd?'管理员创建失败':'修改失败', {
+                                confirmButtonText: '确定',
+                            });
+                        })
+                        return true ;
+
+                    } else { // 验证不通过
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+
+
+            },
+            edit (data){ // 传递过来ruleForm对象
+                this.formVisible = true // 打开窗口
+                this.ruleForm = data ; // 进行数据渲染
+
+            },
+            dele (id){
+                this.$confirm('确定要删除此记录吗?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then( () => {
+                    axios.get(`/admin/delete.do?id=${id}`).then(response => {
+                        if (response.data.code== 0 ){ // 执行成功
+                            this.$message({
+                                message: '删除成功',
+                                type: 'success'
+                            });
+                        }else{
+                            this.$message({
+                                message: response.data.message,
+                                type: 'error'
+                            });
+                        }
+                        this.fetchData (); //刷新列表
+                    })
+                })
+            },
+            resetRuleForm(){ // 重置from对象
+                let ruleFormCopy = { // 用于数据重置
+                    adminName:'', //登录用户名
+                        pass: '', // 密码
+                        checkPass: '', // 确认密码
+                        status:'1', // 用户状态
+                        roleList:[], // roleId集合
+                }
+
+                this.ruleForm = ruleFormCopy ;
+            },
+            // 开关状态改变触发
+            changeSwitch(ruleFrom){
+
+                axios.post(`/admin/updateStatus.do?id=${ruleFrom.adminId}&status=${ruleFrom.status}`).then(response=>{
+                    if (response.data.code!=0){ //执行不成功
+                        this.fetchData() ;//  重新刷新数据
+                        this.$message({
+                            message: response.data.message,
+                            type: 'error'
+                        });
+                    }
+                })
+            }
+            /* ****图片上传相关代码  如页面有图片上传功能放开注释 ****
+            handleAvatarSuccess(res, file) {
+                this.imageUrl = file.response;
+            },
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isJPG) {
+                    this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
+            }*/
+        }
+    })
+</script>
+</html>
