@@ -33,6 +33,8 @@
         <!-- hasAuthority 表示拥有指定权限即可访问 -->
         <security:intercept-url pattern="/brand/*.do" access="hasAuthority('brand')"/>
 
+
+        <!-- 此处通过SpecController进行访问控制 -->
         <!-- hasAnyAuthority 传递参数，则表示拥有指定权限其中一个即可访问 -->
 <!--        <security:intercept-url pattern="/spec/*.do" access="hasAnyAuthority('spec_edit','spec_add')"/>-->
 

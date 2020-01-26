@@ -12,6 +12,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/spec")
+@PreAuthorize("hasAnyAuthority('spec_edit','spec_add')")
 public class SpecController {
 
     @Reference
