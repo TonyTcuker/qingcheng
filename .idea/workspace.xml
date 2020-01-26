@@ -7,24 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/java/com/qingcheng/system/MenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/com/qingcheng/system/MenuTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_interface/src/main/java/com/qingcheng/service/system/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_interface/src/main/java/com/qingcheng/service/system/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_interface/target/classes/com/qingcheng/service/system/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_interface/target/classes/com/qingcheng/service/system/MenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_pojo/src/main/java/com/qingcheng/pojo/system/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_pojo/src/main/java/com/qingcheng/pojo/system/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_pojo/target/classes/com/qingcheng/pojo/system/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_pojo/target/classes/com/qingcheng/pojo/system/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/src/main/java/com/qingcheng/dao/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/src/main/java/com/qingcheng/dao/MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/src/main/java/com/qingcheng/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/src/main/java/com/qingcheng/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/java/com/qingcheng/system/CommonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/java/com/qingcheng/system/CommonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/resources/applicationContext-dao-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/resources/applicationContext-dao-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/classes/com/qingcheng/dao/MenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/classes/com/qingcheng/dao/MenuMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/classes/com/qingcheng/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/classes/com/qingcheng/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/MenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/MenuMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/MenuServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/goods/SpecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/goods/SpecController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/src/main/resources/applicationContext-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/src/main/resources/applicationContext-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/classes/applicationContext-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/classes/applicationContext-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/classes/applicationContext-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/classes/applicationContext-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_web-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_web-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/applicationContext-dao-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/applicationContext-dao-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/com/qingcheng/system/CommonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/com/qingcheng/system/CommonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/system/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/system/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/src/main/webapp/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/classes/com/qingcheng/controller/system/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/classes/com/qingcheng/controller/system/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/controller/system/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/controller/system/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/main.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +84,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1.1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HierarchyBrowserManager">
     <option name="SORT_ALPHABETICALLY" value="true" />
@@ -146,7 +160,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.web_manager">
-    <configuration name="AdminDaoTest.Admin_SelectLastDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminDaoTest.AdminService_findPageCombination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qingcheng_service_system" />
       <extension name="coverage">
         <pattern>
@@ -156,7 +170,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.qingcheng.system" />
       <option name="MAIN_CLASS_NAME" value="com.qingcheng.system.AdminDaoTest" />
-      <option name="METHOD_NAME" value="Admin_SelectLastDate" />
+      <option name="METHOD_NAME" value="AdminService_findPageCombination" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.Menu_findMenuListByLoginName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qingcheng_service_system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qingcheng.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qingcheng.system" />
+      <option name="MAIN_CLASS_NAME" value="com.qingcheng.system.MenuTest" />
+      <option name="METHOD_NAME" value="Menu_findMenuListByLoginName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.Menu_selectMenuListByLoginName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qingcheng_service_system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qingcheng.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qingcheng.system" />
+      <option name="MAIN_CLASS_NAME" value="com.qingcheng.system.MenuTest" />
+      <option name="METHOD_NAME" value="Menu_selectMenuListByLoginName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,22 +219,6 @@
       <option name="PACKAGE_NAME" value="com.qingcheng.system" />
       <option name="MAIN_CLASS_NAME" value="com.qingcheng.system.ResourceTest" />
       <option name="METHOD_NAME" value="Resource_findResKeyLoginName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoleDaoTest.RoleAndResource_findRoleId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qingcheng_service_system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qingcheng.system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qingcheng.system" />
-      <option name="MAIN_CLASS_NAME" value="com.qingcheng.system.RoleDaoTest" />
-      <option name="METHOD_NAME" value="RoleAndResource_findRoleId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -545,21 +575,23 @@
     <list>
       <item itemvalue="JUnit.Test.selectAuditLog_01" />
       <item itemvalue="JUnit.RoleDaoTest.Role_findPage" />
-      <item itemvalue="JUnit.RoleDaoTest.RoleAndResource_findRoleId" />
-      <item itemvalue="JUnit.AdminDaoTest.Admin_SelectLastDate" />
       <item itemvalue="JUnit.RoleDaoTest.Role_findRoleResource" />
       <item itemvalue="JUnit.ResourceTest.Resource_findResKeyLoginName" />
       <item itemvalue="Tomcat Server.service_goods" />
       <item itemvalue="Tomcat Server.service_order" />
       <item itemvalue="Tomcat Server.service_system" />
       <item itemvalue="Tomcat Server.web_manager" />
+      <item itemvalue="JUnit.MenuTest.Menu_selectMenuListByLoginName" />
+      <item itemvalue="JUnit.AdminDaoTest.AdminService_findPageCombination" />
+      <item itemvalue="JUnit.MenuTest.Menu_findMenuListByLoginName" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MenuTest.Menu_findMenuListByLoginName" />
+        <item itemvalue="JUnit.AdminDaoTest.AdminService_findPageCombination" />
+        <item itemvalue="JUnit.MenuTest.Menu_selectMenuListByLoginName" />
         <item itemvalue="JUnit.ResourceTest.Resource_findResKeyLoginName" />
         <item itemvalue="JUnit.RoleDaoTest.Role_findRoleResource" />
-        <item itemvalue="JUnit.RoleDaoTest.RoleAndResource_findRoleId" />
-        <item itemvalue="JUnit.AdminDaoTest.Admin_SelectLastDate" />
       </list>
     </recent_temporary>
   </component>
@@ -623,12 +655,22 @@
       <workItem from="1579829490102" duration="1249000" />
       <workItem from="1579831655753" duration="8078000" />
       <workItem from="1580018102792" duration="618000" />
-      <workItem from="1580022489310" duration="971000" />
+      <workItem from="1580022489310" duration="9016000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -664,6 +706,16 @@
           <line>18</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/qingcheng_service_system/src/main/test/java/com/qingcheng/system/MenuTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/qingcheng_service_system/src/main/test/java/com/qingcheng/system/MenuTest.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/qingcheng_web_manager/src/main/webapp/system/selectResource.html</url>
           <line>274</line>
@@ -674,6 +726,9 @@
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="album.id" />
+      </configuration>
+      <configuration name="JUnit">
+        <watch expression="menuList" />
       </configuration>
     </watches-manager>
   </component>

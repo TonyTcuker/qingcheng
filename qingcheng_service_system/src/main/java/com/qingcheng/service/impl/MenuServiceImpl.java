@@ -7,6 +7,7 @@ import com.qingcheng.entity.PageResult;
 import com.qingcheng.pojo.system.Menu;
 import com.qingcheng.service.system.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
@@ -109,6 +110,23 @@ public class MenuServiceImpl implements MenuService {
         List<Map> menuMap = findMenuListByParentId(menuList, "0");//parentId = 0 表示一级目录，从以一级目录开始递归
 
         return menuMap;
+    }
+
+
+    /**
+     * 通过用户名获取对应的菜单列表
+     * @param loginName
+     * @return
+     */
+    @Override
+    public List<Map> findMenuListByLoginName(String loginName) {
+        // 查询菜单
+        List<Menu> menuList = this.menuMapper.selectMenuListByLoginName(loginName);
+
+        // 进行数据的封装
+        List<Map> menuListMap = this.findMenuListByParentId(menuList, "0");
+
+        return menuListMap;
     }
 
     /**

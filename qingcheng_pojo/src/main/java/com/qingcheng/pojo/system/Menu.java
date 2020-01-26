@@ -1,4 +1,5 @@
 package com.qingcheng.pojo.system;
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -14,14 +15,13 @@ public class Menu implements Serializable{
 	private String id;//菜单ID
 
 
-	
-
 	private String name;//菜单名称
 
 	private String icon;//图标
 
 	private String url;//URL
 
+	@Column(name = "parent_id")
 	private String parentId;//上级菜单ID
 
 	

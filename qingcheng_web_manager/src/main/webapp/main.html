@@ -161,11 +161,12 @@
             }
 
             // 获取导航数据
-            axios.get("/menu/findAllMenu.do").then(response=>{ // 发送请求获取数据
+            axios.get("/menu/findMenuListByLoginName.do").then(response=>{ // 发送请求获取数据
                 // 获取导航数据
                 this.menuList=response.data
                 // 导航默认选择
                 this.data=response.data[0]
+
                 let data=[]
                 for(let i=0;i<this.data.children.length;i++){
                     data.push(this.data.children[i].path)
@@ -176,7 +177,6 @@
             // 获取登录用户名
             axios.get(`/login/showName.do`).then(response=>{
                 this.loginName = response.data.name;
-
             })
         },
         methods: {

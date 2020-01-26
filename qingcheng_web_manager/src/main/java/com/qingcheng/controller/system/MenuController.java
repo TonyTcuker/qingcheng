@@ -5,6 +5,7 @@ import com.qingcheng.entity.PageResult;
 import com.qingcheng.entity.Result;
 import com.qingcheng.pojo.system.Menu;
 import com.qingcheng.service.system.MenuService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -68,5 +69,26 @@ public class MenuController {
     public List<Map> findAllMenu(){
         List<Map> menuMap = this.menuService.findAllMenu();
         return menuMap;
+    }
+
+    /**
+     * 查询当前登录用户拥有的菜单
+     * @return
+     */
+    @GetMapping("/findMenuListByLoginName")
+    public List<Map> findMenuListByLoginName(){
+        // 获取用户名
+        String loginName = SecurityContextHolder.getContext().getAuthentication().getName();
+        List<Map> menuListMap = null ;
+
+        // 管理员用户查询全部
+        if ("admin".equals(loginName)){
+            menuListMap = this.menuService.findAllMenu();
+
+        } else {
+            // 查询菜单
+            menuListMap = this.menuService.findMenuListByLoginName(loginName);
+        }
+        return menuListMap;
     }
 }
