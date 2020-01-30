@@ -71,7 +71,7 @@ public class LoginLogController {
     @GetMapping("/findByLoginLog")
     public PageResult<LoginLog> findByLoginLog(int page,int size){
         String loginName = SecurityContextHolder.getContext().getAuthentication().getName(); // 获取登录用户名
-        Map<String,Object> search = new HashMap<>(); // 创建查询条件
+        Map<String,Object> search = new HashMap(); // 创建查询条件
         search.put("loginName",loginName);
 
         PageResult<LoginLog> loginLogPageResult = this.loginLogService.findPage(search, page, size); // 分页查询结果

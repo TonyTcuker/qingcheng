@@ -20,6 +20,7 @@
         <module>qingcheng_web_manager</module>
         <module>qingcheng_common_service</module>
         <module>qingcheng_common_web</module>
+        <module>qingcheng_web_portal</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -42,10 +43,17 @@
         <snowflake.vsersion>1.0.0</snowflake.vsersion>
         <useragentutils.version>1.21</useragentutils.version>
         <jbcrypt.version>0.4</jbcrypt.version>
+        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
     </properties>
     <!-- 依赖管理标签  必须加 -->
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf-spring5</artifactId>
+                <version>${thymeleaf.version}</version>
+            </dependency>
 
             <!-- 用户jBcrypt加密 -->
             <dependency>
