@@ -34,7 +34,7 @@
       <module name="qingcheng_service_order" target="8" />
       <module name="qingcheng_service_system" target="6" />
       <module name="qingcheng_service_user" target="1.5" />
-      <module name="qingcheng_web_manager" target="1.5" />
+      <module name="qingcheng_web_manager" target="6" />
       <module name="qingcheng_web_portal" target="1.5" />
       <module name="qingcheng_web_portal (1)" target="1.7" />
     </bytecodeTargetLevel>

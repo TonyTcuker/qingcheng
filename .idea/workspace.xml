@@ -2,42 +2,18 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="qingcheng_web_manager:war exploded" />
+      <artifact name="qingcheng_web_portal:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="第8章 菜单控制 功能 【完成】">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/qingcheng_web_portal_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/qingcheng_web_portal_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/qingcheng_web_portal.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/resources/applicationContext-thymeleaf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/resources/dubbo.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/qingcheng_web_manager_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/qingcheng_web_manager_war_exploded.xml" afterDir="false" />
+    <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_common_service/qingcheng_common_service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_common_service/qingcheng_common_service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_common_web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_common_web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_common_web/qingcheng_common_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_common_web/qingcheng_common_web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/qingcheng_service_business.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/qingcheng_service_business.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_config/qingcheng_service_config.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_config/qingcheng_service_config.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/qingcheng_service_goods.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/qingcheng_service_goods.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_order/qingcheng_service_order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_order/qingcheng_service_order.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/qingcheng_service_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/qingcheng_service_system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_user/qingcheng_service_user.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_user/qingcheng_service_user.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/resources/applicationContext-dao-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/src/main/test/resources/applicationContext-dao-test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/qingcheng_web_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/qingcheng_web_manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/system/LoginLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/system/LoginLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/src/main/java/com/qingcheng/controller/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/qingcheng_web_portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/qingcheng_web_portal.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.web_manager">
+  <component name="RunManager" selected="Tomcat Server.web_portal">
     <configuration name="AdminDaoTest.AdminService_findPageCombination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qingcheng_service_system" />
       <extension name="coverage">
@@ -577,6 +553,82 @@
         </option>
       </method>
     </configuration>
+    <configuration name="web_portal" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="qingcheng_web_portal:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="web_manager_(1)_qingcheng_parent" />
+        <option name="HTTP_PORT" value="19001" />
+        <option name="JNDI_PORT" value="13001" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58686" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="qingcheng_web_portal:war exploded" />
+        </option>
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.Test.selectAuditLog_01" />
       <item itemvalue="JUnit.RoleDaoTest.Role_findPage" />
@@ -589,6 +641,7 @@
       <item itemvalue="Tomcat Server.service_order" />
       <item itemvalue="Tomcat Server.service_system" />
       <item itemvalue="Tomcat Server.web_manager" />
+      <item itemvalue="Tomcat Server.web_portal" />
     </list>
     <recent_temporary>
       <list>
@@ -661,7 +714,7 @@
       <workItem from="1580369074414" duration="472000" />
       <workItem from="1580369556332" duration="558000" />
       <workItem from="1580370141723" duration="181000" />
-      <workItem from="1580370325826" duration="1739000" />
+      <workItem from="1580370325826" duration="2266000" />
     </task>
     <task id="LOCAL-00001" summary="第8章 菜单控制 功能 【完成】">
       <created>1580032346853</created>
@@ -670,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580032346853</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="portal工程基本搭建，以及thymeleaf的配置">
+      <created>1580372260243</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580372260243</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +761,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第8章 菜单控制 功能 【完成】" />
-    <option name="LAST_COMMIT_MESSAGE" value="第8章 菜单控制 功能 【完成】" />
+    <MESSAGE value="完成基本的框架搭建" />
+    <MESSAGE value="portal工程基本搭建，以及thymeleaf的配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="portal工程基本搭建，以及thymeleaf的配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

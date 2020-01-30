@@ -63,7 +63,6 @@
 	</bean>
 
 
-
 	<!-- 配置Bean -->
 	<bean class="com.qingcheng.service.impl.MenuServiceImpl"/>
 
