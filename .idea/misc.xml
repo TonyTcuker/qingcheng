@@ -8,7 +8,8 @@
     <file type="web" url="file://$PROJECT_DIR$/qingcheng_service_system" />
     <file type="web" url="file://$PROJECT_DIR$/qingcheng_service_user" />
     <file type="web" url="file://$PROJECT_DIR$/qingcheng_web_manager" />
-    <file type="web" url="file://$PROJECT_DIR$/../../src/main/resources" />
+    <file type="web" url="file://$PROJECT_DIR$/qingcheng_web_portal" />
+    <file type="web" url="file://$USER_HOME$/src/main/resources" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -17,6 +18,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/qingcheng_web_portal/pom.xml" />
       </list>
     </option>
   </component>

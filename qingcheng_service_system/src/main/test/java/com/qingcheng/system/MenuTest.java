@@ -3,7 +3,6 @@ package com.qingcheng.system;
 import com.qingcheng.dao.MenuMapper;
 import com.qingcheng.pojo.system.Menu;
 import com.qingcheng.service.impl.MenuServiceImpl;
-import com.qingcheng.service.system.MenuService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
