@@ -79,7 +79,7 @@
 				<div class="py-container">
 					<div class="yui3-g Logo">
 						<div class="yui3-u Left logoArea">
-							<a class="logo-bd" title="青橙" href="index.html" target="_blank"></a>
+							<a class="logo-bd" title="青橙" href="index2.html" target="_blank"></a>
 						</div>
 						<div class="yui3-u Rit searchArea">
 							<div class="search">
@@ -1812,30 +1812,51 @@
 			</div>
 		</div>
 	</div>
-D
+
 	<!--列表-->
 	<div class="py-container">
 		<div class="yui3-g SortList">
 			<div class="yui3-u Center banerArea">
 				<!--banner轮播-->
-				<div id="myCarousel" data‐ride="carousel" data‐interval="4000"
-					 class="sui‐carousel slide">
-					<ol class="carousel‐indicators">
-						<li data‐target="#myCarousel" th:data‐slideto="${iterStat.index}" th:class="${iterStat.index==0?'active':''}"
-							th:each="ad,iterStat:${lbt}"></li>
-					</ol>
+				<div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
+					<ol class="carousel-indicators">
+						<li  data-target="#myCarousel" th:data-slide-to="${adStat.index}"
+							 th:class="${adStat.index==0?'active':''}" th:each="ad,adStat:${lbt}"></li>
 
-					<div th:class="'carousel‐inner'">
-						<div th:class="${iterStat.index==0?'item':'item'}"  th:each="ad,iterStat:${lbt}">
-							<a th:href="${ad.url}">
-								<img th:src="${ad.image}" />
+<!--						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+<!--						<li data-target="#myCarousel" data-slide-to="1"></li>-->
+<!--						<li data-target="#myCarousel" data-slide-to="2"></li>-->
+					</ol>
+					<div th:class="'carousel-inner'">
+
+<!--						<div th:class="${iterStat.index==0}?'active item':'active'" th:each="ad,iterStat:${lbt}">-->
+<!--							<a th:href="${ad.url}">-->
+<!--								<img th:src="${ad.image}" />-->
+<!--							</a>-->
+<!--						</div>-->
+						<div class="item">
+							<a href="http://baidu2.wypxj.com/">
+								<img src="./img/banner1.jpg" />
+							</a>
+						</div>
+						<div class="item">
+							<a href="http://baidu2.wypxj.com/">
+								<img src="./img/banner2.jpg" />
+							</a>
+						</div>
+						<div class="item">
+							<a href="http://baidu2.wypxj.com/">
+								<img src="./img/banner3.jpg" />
+							</a>
+						</div>
+						<div class="item">
+							<a href="http://baidu2.wypxj.com/">
+								<img src="./img/banner3.jpg" />
 							</a>
 						</div>
 					</div>
-					<a href="#myCarousel" data‐slide="prev" class="carousel‐controlleft">‹</a>
-					<a href="#myCarousel" data‐slide="next" class="carousel‐controlright">›</a>
-
-
+					<a href="#myCarousel" data-slide="prev" class="carousel-control left">‹</a>
+					<a href="#myCarousel" data-slide="next" class="carousel-control right">›</a>
 				</div>
 			</div>
 			<div class="yui3-u Right">

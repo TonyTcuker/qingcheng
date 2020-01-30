@@ -7,302 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/qingcheng_service_business/src/test/java/com/qingcheng/test/AdTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_service_business/src/test/java/com/qingcheng/test/CommonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_service_business/src/test/resource/applicationContext-dao-test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-JD-index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-addressList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-application.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-cart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-cooperation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-getOrderInfo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-login-manage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-myOrder.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-mycomment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-pay.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-payconfirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-payfail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-paysuccess.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-sampling.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-seckill-index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-seckill-item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-seckillOrder.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-shop.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-shoplogin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-success-cart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-weixinpay.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/pages-zoom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/widget-cartPanelView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/css/widget-jquery.autocomplete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/autocomplete.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/catalogSearch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/list-data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/nav-data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/orders.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/productAlso.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/productChoiceness.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/productGuess.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/productInfo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/productList.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/productRelationship.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/shoplist-data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/shoplist.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/data/success.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-moon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-moon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-moon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-moon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-pc.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-pc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-pc.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-pc.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-tb.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-tb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-tb.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-tb.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-touch.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-touch.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-touch.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/fonts/icon-touch.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/b1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/b2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/b3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/bg-who1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/buy001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/buy002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/buy01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/car.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/clock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/code.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/cooperation_banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/down-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/dp01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/dp02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/dp03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/dp04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/empty_heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/erweima.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/fail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/gocart.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/gocart01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/goods1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/gotop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/icon-red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/intro01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/intro02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/intro03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/itemlike01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/itemlike02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/itemlike03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/itemlike04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/itemlike05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/itemlike06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/l-m01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/list.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/list.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/login-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/manage-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/mobile01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/mobile02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/mobile03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/mobile04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/mobile05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/mobile06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/part01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/part02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/part03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/pay5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/phone14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/photo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/photo_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/s1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/s2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/s3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/sampling_head.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/seckillbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/shi_heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/shop-intro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/shop-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/shop-part.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/t.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/title_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/_/y24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/account.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/ad1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/ali.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/banner1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/banner1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/banner2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/banner3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/banner4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/barrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/bg0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/bg1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/bg2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/bg3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/brand_21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/cartPanelViewIcons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/choosed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/clock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/duihuan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/erweima.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-b01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-b02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/floor-1-b03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/goods.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/interest01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/interest02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/interest03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/interest04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/interest05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/interest06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like_02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like_03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like_04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like_05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/like_06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/linker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/loginbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/mod-list.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/paylogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/qq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/quan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/sina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/today01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/today02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/today03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/today04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/weixin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/wx_cz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/img/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/model/cartModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/addressList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/city-picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/jquery.slideunlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/login-manage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/person-collect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/person-footmark.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/seckill-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/shop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/shoplogin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/pages/sm-city-picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/plugins/jquery.jqzoom/jquery.jqzoom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/plugins/jquery.jqzoom/zoom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/plugins/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/plugins/sui/sui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/js/widget/cartPanelView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5eb0bdf-ce77-4f6b-92bf-73af605358f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e5eb0bdf-ce77-4f6b-92bf-73af605358f6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_interface/src/main/java/com/qingcheng/service/business/AdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_interface/src/main/java/com/qingcheng/service/business/AdService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_interface/target/classes/com/qingcheng/service/business/AdService.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_interface/target/classes/com/qingcheng/service/business/AdService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/qingcheng_service_business.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/qingcheng_service_business.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/src/main/java/com/qingcheng/service/impl/AdServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/src/main/java/com/qingcheng/service/impl/AdServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/dao/ActivityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/dao/ActivityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/dao/AdMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/dao/AdMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/dao/ConfigMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/dao/ConfigMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/ActivityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/ActivityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/AdServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/AdServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/applicationContext-dao-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/test-classes/applicationContext-dao-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/ActivityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/ActivityMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/AdMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/AdMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/ConfigMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/dao/ConfigMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/ActivityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/ActivityServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/AdServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/AdServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -367,7 +86,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="cd1356390b834c053fecffbed565570148819ed6" />
+        <entry key="$PROJECT_DIR$" value="v1.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -405,7 +124,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/qingcheng_service_business/src/test/resource" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -419,13 +138,16 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.qingcheng.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/qingcheng_service_business/src/test/resource" />
       <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template" />
       <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/qingcheng_service_business/src/test/resource" />
       <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/qingcheng_service_system/src/main/test/resouce" />
     </key>
@@ -545,6 +267,82 @@
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="service_business" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:18004/qingcheng_service_business_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="qingcheng_service_business:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/qingcheng_service_business_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="service_goods_(1)_qingcheng_parent" />
+        <option name="HTTP_PORT" value="18004" />
+        <option name="JNDI_PORT" value="12004" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58533" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="qingcheng_service_business:war exploded" />
+        </option>
       </method>
     </configuration>
     <configuration name="service_goods" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
@@ -771,10 +569,8 @@
     </configuration>
     <configuration name="web_manager" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:19000/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
         <artifact name="qingcheng_web_manager:war exploded">
           <settings>
@@ -849,8 +645,8 @@
     </configuration>
     <configuration name="web_portal" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="qingcheng_web_portal:war exploded">
           <settings>
@@ -928,14 +724,15 @@
       <item itemvalue="JUnit.RoleDaoTest.Role_findPage" />
       <item itemvalue="JUnit.AdminDaoTest.AdminService_findPageCombination" />
       <item itemvalue="JUnit.MenuTest.Menu_findMenuListByLoginName" />
+      <item itemvalue="JUnit.All in qingcheng_web_portal" />
+      <item itemvalue="JUnit.AdTest.findByPosition" />
+      <item itemvalue="JUnit.AdTest.Ad_findByPosition" />
       <item itemvalue="Tomcat Server.service_goods" />
+      <item itemvalue="Tomcat Server.service_business" />
       <item itemvalue="Tomcat Server.service_order" />
       <item itemvalue="Tomcat Server.service_system" />
       <item itemvalue="Tomcat Server.web_manager" />
       <item itemvalue="Tomcat Server.web_portal" />
-      <item itemvalue="JUnit.All in qingcheng_web_portal" />
-      <item itemvalue="JUnit.AdTest.findByPosition" />
-      <item itemvalue="JUnit.AdTest.Ad_findByPosition" />
     </list>
     <recent_temporary>
       <list>
@@ -1013,7 +810,7 @@
       <workItem from="1580369074414" duration="472000" />
       <workItem from="1580369556332" duration="558000" />
       <workItem from="1580370141723" duration="181000" />
-      <workItem from="1580370325826" duration="5239000" />
+      <workItem from="1580370325826" duration="11560000" />
     </task>
     <task id="LOCAL-00001" summary="第8章 菜单控制 功能 【完成】">
       <created>1580032346853</created>
@@ -1036,7 +833,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580372715809</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完成广告列表的查询 findByPosition">
+      <created>1580375882592</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580375882592</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1070,7 +874,8 @@
     <MESSAGE value="完成基本的框架搭建" />
     <MESSAGE value="portal工程基本搭建，以及thymeleaf的配置" />
     <MESSAGE value="portal工程基本搭建，以及thymeleaf的配置&#10;更新tomcat配置，tomcat能够运行" />
-    <option name="LAST_COMMIT_MESSAGE" value="portal工程基本搭建，以及thymeleaf的配置&#10;更新tomcat配置，tomcat能够运行" />
+    <MESSAGE value="完成广告列表的查询 findByPosition" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成广告列表的查询 findByPosition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
