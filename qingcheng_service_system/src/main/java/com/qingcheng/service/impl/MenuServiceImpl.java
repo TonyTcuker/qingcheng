@@ -1,4 +1,5 @@
 package com.qingcheng.service.impl;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -7,7 +8,6 @@ import com.qingcheng.entity.PageResult;
 import com.qingcheng.pojo.system.Menu;
 import com.qingcheng.service.system.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
