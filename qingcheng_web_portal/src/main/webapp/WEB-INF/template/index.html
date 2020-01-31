@@ -9,6 +9,21 @@
 
 	<link rel="stylesheet" type="text/css" href="./css/all.css" />
 	<link rel="stylesheet" type="text/css" href="./css/pages-JD-index.css" />
+
+	<style>
+		.el-carousel__item h3 {
+			font-size: 14px;
+			opacity: 0.75;
+			line-height: 730px;
+			margin: 0;
+		}
+
+		.el-carousel__item:nth-child(2n) {
+		}
+
+		.el-carousel__item:nth-child(2n+1) {
+		}
+	</style>
 </head>
 
 <body>
@@ -1820,21 +1835,20 @@ D
 				<!--banner轮播-->
 				<div id="myCarousel" data‐ride="carousel" data‐interval="4000"
 					 class="sui‐carousel slide">
-					<ol class="carousel‐indicators">
-						<li data‐target="#myCarousel" th:data‐slideto="${iterStat.index}" th:class="${iterStat.index==0?'active':''}"
-							th:each="ad,iterStat:${lbt}"></li>
-					</ol>
 
-					<div th:class="'carousel‐inner'">
-						<div th:class="${iterStat.index==0?'item':'item'}"  th:each="ad,iterStat:${lbt}">
-							<a th:href="${ad.url}">
-								<img th:src="${ad.image}" />
-							</a>
+					<div id="app" tclass="carousel‐inner">
+						<div class="action item" >
+							<template>
+								<el-carousel :interval="5000" arrow="always" height="450px">
+									<el-carousel-item v-for="ad in adList" :key="ad.id">
+										<a :href="ad.url">
+											<img :src="ad.image">
+										</a>
+									</el-carousel-item>
+								</el-carousel>
+							</template>
 						</div>
 					</div>
-					<a href="#myCarousel" data‐slide="prev" class="carousel‐controlleft">‹</a>
-					<a href="#myCarousel" data‐slide="next" class="carousel‐controlright">›</a>
-
 
 				</div>
 			</div>
@@ -3019,9 +3033,37 @@ D
 		</div>
 	</div>
 
+
+	<script src="./js/vue.js"></script>
+	<!-- element -->
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<!-- 引入组件库 -->
+	<script  src="https://unpkg.com/element-ui/lib/index.js"></script>
+
 	<script type="text/javascript" src="./js/all.js"></script>
 	<script type="text/javascript" src="./js/plugins/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/pages/index.js"></script>
+
+
+	<!--
+	 	如果需要通过thymeleaf对js代码继续赋值，需要添加th:inline属性
+	 -->
+	<script th:inline="javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				return(){
+					adList:[] // 轮播图列表
+				}
+			},
+			created(){
+				this.adList = [[${lbt}]];
+			},
+			methods:{
+			}
+		})
+	</script>
 </body>
 
 </html>

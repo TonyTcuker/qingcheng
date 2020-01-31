@@ -12,24 +12,19 @@ import java.util.List;
 @Controller
 public class IndexController {
 
-    /**
-     * 实现首页的跳转
-     * @return
-     */
+
 
     @Reference
     private AdService adService ;
 
+    /**
+     * 实现首页的跳转
+     * @return
+     */
     @GetMapping("/index")
     public String findByPosition(Model model){
         List<Ad> adList = this.adService.findByPosition("web_index_lb");
         model.addAttribute("lbt",adList);
         return "index";
-    }
-    @GetMapping("/index2")
-    public String findByPosition2(Model model){
-        List<Ad> adList = this.adService.findByPosition("web_index_lb");
-        model.addAttribute("lbt",adList);
-        return "index2";
     }
 }
