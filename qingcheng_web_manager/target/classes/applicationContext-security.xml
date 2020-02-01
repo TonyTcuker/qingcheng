@@ -24,8 +24,8 @@
 
 
         <!-- 基于URL的访问控制 -->
-        <!-- 所以的页面需要find_all 权限才能访问 -->
-        <security:intercept-url pattern="/**/*.html" access="hasAuthority('find_all')"/>
+        <!-- 所以的页面需要find_html 权限才能访问 -->
+        <security:intercept-url pattern="/**/*.html" access="hasAuthority('find_html')"/>
 
         <!-- hasAnyAuthority 表示拥有任意权限即可访问 -->
         <security:intercept-url pattern="/**/find*.do" access="permitAll()"/>
@@ -33,6 +33,12 @@
         <!-- hasAuthority 表示拥有指定权限即可访问 -->
         <security:intercept-url pattern="/brand/*.do" access="hasAuthority('brand')"/>
 
+        <!-- 配置图片库访问权限 -->
+        <security:intercept-url pattern="/album/*.do" access="hasAnyAuthority('goods_album')"/>
+
+        <security:intercept-url pattern="/role/*.do" access="hasAnyAuthority('config_role')"/>
+
+        <security:intercept-url pattern="/admin/*.do" access="hasAnyAuthority('config_admin')"/>
 
         <!-- 此处通过SpecController进行访问控制 -->
         <!-- hasAnyAuthority 传递参数，则表示拥有指定权限其中一个即可访问 -->
