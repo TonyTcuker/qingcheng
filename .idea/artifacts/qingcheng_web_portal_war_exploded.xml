@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="qingcheng_web_portal:war exploded">
-    <output-path>$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal</output-path>
+    <output-path>$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -37,7 +37,6 @@
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
           <element id="library" level="project" name="Maven: org.jboss.netty:netty:3.2.5.Final" />
           <element id="library" level="project" name="Maven: org.apache.zookeeper:zookeeper:3.4.7" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.6.1" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
           <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
@@ -69,6 +68,11 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:5.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring5:3.0.11.RELEASE" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.11.RELEASE" />
+          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: eu.bitwalker:UserAgentUtils:1.21" />
           <element id="archive" name="qingcheng_interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="qingcheng_interface" />
@@ -83,7 +87,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="qingcheng_web_portal/web/Web" />
     </root>

@@ -16,15 +16,19 @@
       </schema-mapping>
     </data-source>
     <data-source name="@localhost_docker_IMac" uuid="e5eb0bdf-ce77-4f6b-92bf-73af605358f6">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <database-info product="MySQL" version="8.0.18" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="8.0.18" exact-driver-version="8.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="qingcheng_goods" />
-            <name qname="qingcheng_order" />
-            <name qname="qingcheng_user" />
-          </node>
+          <node kind="schema" qname="@" />
+          <node kind="schema" qname="qingcheng_business" />
+          <node kind="schema" qname="qingcheng_goods" />
+          <node kind="schema" qname="qingcheng_order" />
+          <node kind="schema" qname="qingcheng_user" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

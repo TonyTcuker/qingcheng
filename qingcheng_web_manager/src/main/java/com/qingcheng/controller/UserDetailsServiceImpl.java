@@ -45,7 +45,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         // 添加角色
-        List<GrantedAuthority> grantedAuthorityList = new ArrayList<>(); // 创建角色集合
+        List<GrantedAuthority> grantedAuthorityList = new ArrayList(); // 创建角色集合
         if (username.equals("admin")){
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_ADMIN"); //创建角色
             grantedAuthorityList.add(grantedAuthority);// 向集合添加角色

@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="qingcheng_web_portal.war">
+    <root id="archive" name="qingcheng_web_portal-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="qingcheng_web_portal:war exploded" />
     </root>
   </artifact>

@@ -9,6 +9,7 @@ import com.qingcheng.service.business.AdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -93,6 +94,26 @@ public class AdServiceImpl implements AdService {
      */
     public void delete(Integer id) {
         adMapper.deleteByPrimaryKey(id);
+    }
+
+
+    /**
+     * 通过位置查询广告列表
+     * @param position
+     * @return
+     */
+    @Override
+    public List<Ad> findByPosition(String position) {
+        Date nowDate = new Date();
+        Example adExample = new Example(Ad.class);
+        Example.Criteria adCriteria = adExample.createCriteria();
+        adCriteria.andEqualTo("position",position);
+        adCriteria.andLessThanOrEqualTo("startTime",nowDate); // 开始时间必须要大于当前时间有效
+        adCriteria.andGreaterThanOrEqualTo("endTime",nowDate); // 结束时间要小于当前时间有效
+        adCriteria.andEqualTo("status",1);// 状态必须为有效
+
+        List<Ad> adList = this.adMapper.selectByExample(adExample); // 查询列表
+        return adList ;
     }
 
     /**
