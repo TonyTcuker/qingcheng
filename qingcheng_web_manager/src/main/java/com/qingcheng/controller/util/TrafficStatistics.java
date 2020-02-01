@@ -17,7 +17,7 @@ public class TrafficStatistics {
 
     private TrafficStatistics() {
         this.pVCount = 0 ;
-        this.uVMap = new HashMap<>();
+        this.uVMap = new HashMap();
     }
 
     public static TrafficStatistics getTrafficStatistics(){
