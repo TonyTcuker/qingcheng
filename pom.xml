@@ -44,6 +44,7 @@
         <useragentutils.version>1.21</useragentutils.version>
         <jbcrypt.version>0.4</jbcrypt.version>
         <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+        <aliyunOss.version>3.8.0</aliyunOss.version>
     </properties>
     <!-- 依赖管理标签  必须加 -->
     <dependencyManagement>
@@ -236,17 +237,19 @@
                 <version>${snowflake.vsersion}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyunOss.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
-
-
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
 </project>
