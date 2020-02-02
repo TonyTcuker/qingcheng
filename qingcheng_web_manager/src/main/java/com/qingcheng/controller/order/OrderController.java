@@ -8,6 +8,7 @@ import com.qingcheng.pojo.order.OrderAndOrderItem;
 import com.qingcheng.pojo.order.OrderItemAndSku;
 import com.qingcheng.pojo.order.SplitOrder;
 import com.qingcheng.service.order.OrderService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -53,12 +54,14 @@ public class OrderController {
         return new Result();
     }
 
+
     @PostMapping("/update")
     public Result update(@RequestBody Order order){
         orderService.update(order);
         return new Result();
     }
 
+    @PreAuthorize("orders_delete")
     @GetMapping("/delete")
     public Result delete(String id){
         orderService.delete(id);
@@ -89,12 +92,14 @@ public class OrderController {
         return new Result();
     }
 
+    @PreAuthorize("orders_edit")
     @PostMapping("/mergeOrder") // 合并订单
     public Result mergeOrder(String mergerMaster,String mergerSlaver){ // 需要传入 主订单ID 以及从订单ID
         this.orderService.mergeOrder(mergerMaster,mergerSlaver);
         return new Result();
     }
 
+    @PreAuthorize("orders_edit")
     @PostMapping("/splitOrder") // 拆分订单调用
     public Result splitOrder(String id ,@RequestBody List<SplitOrder> splitOrderList) {
         this.orderService.splitOrder(id,splitOrderList);

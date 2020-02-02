@@ -40,6 +40,11 @@
 
         <security:intercept-url pattern="/admin/*.do" access="hasAnyAuthority('config_admin')"/>
 
+        <!--
+            order 权限在controller中配置
+         -->
+
+
         <!-- 此处通过SpecController进行访问控制 -->
         <!-- hasAnyAuthority 传递参数，则表示拥有指定权限其中一个即可访问 -->
 <!--        <security:intercept-url pattern="/spec/*.do" access="hasAnyAuthority('spec_edit','spec_add')"/>-->
