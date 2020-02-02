@@ -28,7 +28,7 @@ public interface MenuMapper extends Mapper<Menu> {
             "            WHERE tb_admin_role.admin_id IN ( " +
             "                select tb_admin.id " +
             "                FROM tb_admin " +
-            "                WHERE tb_admin.login_name = 'admin')) " +
+            "                WHERE tb_admin.login_name = '${loginName}')) " +
             "    ) " +
             ") " +
             "UNION " +
@@ -49,7 +49,7 @@ public interface MenuMapper extends Mapper<Menu> {
             "                WHERE tb_admin_role.admin_id IN ( " +
             "                    select tb_admin.id " +
             "                    FROM tb_admin " +
-            "                    WHERE tb_admin.login_name = 'admin')) " +
+            "                    WHERE tb_admin.login_name = '${loginName}')) " +
             "        ) " +
             "    ) " +
             ") " +

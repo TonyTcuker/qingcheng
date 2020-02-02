@@ -40,6 +40,9 @@
 
         <security:intercept-url pattern="/admin/*.do" access="hasAnyAuthority('config_admin')"/>
 
+        <!-- 商品分类管理 -->
+        <security:intercept-url pattern="/category/*.do" access="hasAnyAuthority('goods_category_CRUD')"/>
+
         <!--
             order 权限在controller中配置
          -->
