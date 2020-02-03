@@ -50,4 +50,6 @@
 	<bean id="auditLogService" class="com.qingcheng.service.impl.AuditLogServiceImpl"/>
 
 	<context:component-scan base-package="com.qingcheng.service.impl"/>
+
+	<bean class="com.qingcheng.service.impl.CategoryServiceImpl" />
 </beans>

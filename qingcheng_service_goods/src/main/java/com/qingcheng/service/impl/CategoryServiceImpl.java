@@ -9,6 +9,8 @@ import com.qingcheng.service.goods.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -85,6 +87,51 @@ public class CategoryServiceImpl implements CategoryService {
      */
     public void update(Category category) {
         categoryMapper.updateByPrimaryKeySelective(category);
+    }
+
+
+    /**
+     * 实现首页分类导航
+     * @return
+     */
+    @Override
+    public List<Map> findIndexCategory() {
+        Example example = new Example(Category.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("isShow",1);
+        example.setOrderByClause("seq"); // 如果需要降序 加上desc即可
+        List<Category> categoryList = this.categoryMapper.selectByExample(example);
+
+
+        List<Map> categoryListMap = findNextCategory(categoryList, 0);
+        return categoryListMap;
+    }
+
+    /**
+     * 首页分类导航数据格式分类
+     * @param categoryList 分类集合
+     * @param parentId 上一级id，一级分类的上级Id为0
+     * @return
+     */
+    public List<Map> findNextCategory(List<Category> categoryList,Integer parentId){
+        List<Map> categoryListMap = new ArrayList<Map>();
+
+        for (Category category:categoryList){
+
+            // 表示当前分类属于上级分类的子类
+            if (category.getParentId().equals(parentId)){
+
+                Map dataMap = new HashMap();
+                dataMap.put("id",category.getId()); // 保存分类ID
+                dataMap.put("name",category.getName()); // 保存分类名称
+                dataMap.put("parentId",category.getParentId()); // 保存分类上级id
+                dataMap.put("menus",this.findNextCategory(categoryList, category.getId())); // 递归下一级菜单
+
+                categoryListMap.add(dataMap); // 添加到集合中
+            }
+        }
+
+        return categoryListMap;
     }
 
     /**
