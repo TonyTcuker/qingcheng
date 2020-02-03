@@ -98,12 +98,12 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Map> findIndexCategory() {
         Example example = new Example(Category.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("isShow",1);
+        criteria.andEqualTo("isShow",1); // 只有显示的分类才进行展示
         example.setOrderByClause("seq"); // 如果需要降序 加上desc即可
-        List<Category> categoryList = this.categoryMapper.selectByExample(example);
+        List<Category> categoryList = this.categoryMapper.selectByExample(example); // 查询数据
 
 
-        List<Map> categoryListMap = findNextCategory(categoryList, 0);
+        List<Map> categoryListMap = findNextCategory(categoryList, 0); // 对数据进行格式化
         return categoryListMap;
     }
 
@@ -120,11 +120,9 @@ public class CategoryServiceImpl implements CategoryService {
 
             // 表示当前分类属于上级分类的子类
             if (category.getParentId().equals(parentId)){
-
                 Map dataMap = new HashMap();
                 dataMap.put("id",category.getId()); // 保存分类ID
                 dataMap.put("name",category.getName()); // 保存分类名称
-                dataMap.put("parentId",category.getParentId()); // 保存分类上级id
                 dataMap.put("menus",this.findNextCategory(categoryList, category.getId())); // 递归下一级菜单
 
                 categoryListMap.add(dataMap); // 添加到集合中

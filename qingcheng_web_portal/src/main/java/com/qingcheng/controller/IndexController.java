@@ -26,9 +26,9 @@ public class IndexController {
      */
     @GetMapping("/index")
     public String findByPosition(Model model){
-        // 查询首页轮播图
-        List<Ad> adList = this.adService.findByPosition("web_index_lb");
-        List<Map> indexCategory = this.categoryService.findIndexCategory();
+
+        List<Ad> adList = this.adService.findByPosition("web_index_lb"); // 查询首页轮播图广告
+        List<Map> indexCategory = this.categoryService.findIndexCategory(); // 实现首页分类导航数据查询
 
         // 添加request
         model.addAttribute("lbt",adList);

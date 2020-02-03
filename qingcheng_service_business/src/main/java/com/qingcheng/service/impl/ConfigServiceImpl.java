@@ -1,5 +1,4 @@
 package com.qingcheng.service.impl;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.qingcheng.dao.ConfigMapper;
@@ -12,7 +11,7 @@ import tk.mybatis.mapper.entity.Example;
 import java.util.List;
 import java.util.Map;
 
-@Service
+//@Service
 public class ConfigServiceImpl implements ConfigService {
 
     @Autowired
