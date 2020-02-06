@@ -2,31 +2,23 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="qingcheng_service_order:war exploded" />
+      <artifact name="qingcheng_web_portal:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="">
+    <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="完成首页分类导航后端代码">
+      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/src/main/java/com/qingcheng/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/src/main/java/com/qingcheng/service/impl/ConfigServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/ConfigServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/src/main/java/com/qingcheng/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/src/main/java/com/qingcheng/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_order/target/qingcheng_service_order-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_order/target/qingcheng_service_order-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_system/target/qingcheng_service_system-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_web-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_common_web-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_manager/target/qingcheng_web_manager-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/classes/com/qingcheng/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/classes/com/qingcheng/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/template/index2.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,13 +59,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="qingcheng_goods: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost_docker_IMac" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="qingcheng_goods: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tb_category: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -94,7 +79,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="V1.0" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,18 +131,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.qingcheng.dao" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template" />
       <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp" />
       <recent name="$PROJECT_DIR$/qingcheng_service_business/src/test/resource" />
       <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/qingcheng_service_system/src/main/test/resouce" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qingcheng.dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,7 +157,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CategoryTest.category_findIndexCategory">
+  <component name="RunManager" selected="Tomcat Server.web_portal">
     <configuration name="AdTest.Ad_findByPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qingcheng_service_business" />
       <extension name="coverage">
@@ -829,6 +814,7 @@
       <item itemvalue="JUnit.All in qingcheng_web_portal" />
       <item itemvalue="JUnit.AdTest.findByPosition" />
       <item itemvalue="JUnit.AdTest.Ad_findByPosition" />
+      <item itemvalue="JUnit.CategoryTest.category_findIndexCategory" />
       <item itemvalue="Tomcat Server.service_all" />
       <item itemvalue="Tomcat Server.service_goods" />
       <item itemvalue="Tomcat Server.service_business" />
@@ -836,7 +822,6 @@
       <item itemvalue="Tomcat Server.service_system" />
       <item itemvalue="Tomcat Server.web_manager" />
       <item itemvalue="Tomcat Server.web_portal" />
-      <item itemvalue="JUnit.CategoryTest.category_findIndexCategory" />
     </list>
     <recent_temporary>
       <list>
@@ -856,12 +841,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4ac303b4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2654431e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4ac303b4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@69b7491c" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2654431e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@47e1c4a4" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -919,6 +904,10 @@
       <workItem from="1580626767583" duration="1910000" />
       <workItem from="1580713648500" duration="1509000" />
       <workItem from="1580715805244" duration="9459000" />
+      <workItem from="1580798308238" duration="6000" />
+      <workItem from="1580808638746" duration="984000" />
+      <workItem from="1580888466195" duration="1335000" />
+      <workItem from="1580889977870" duration="6122000" />
     </task>
     <task id="LOCAL-00001" summary="第8章 菜单控制 功能 【完成】">
       <created>1580032346853</created>
