@@ -9,10 +9,7 @@ import com.qingcheng.service.goods.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -147,6 +144,7 @@ public class CategoryServiceImpl implements CategoryService {
         }
         categoryMapper.deleteByPrimaryKey(id);
     }
+
 
     /**
      * 构建查询条件

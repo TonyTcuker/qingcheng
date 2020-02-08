@@ -2,9 +2,11 @@ package com.qingcheng.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.qingcheng.entity.Result;
+import com.qingcheng.pojo.goods.Category;
 import com.qingcheng.pojo.goods.Goods;
 import com.qingcheng.pojo.goods.Sku;
 import com.qingcheng.pojo.goods.Spu;
+import com.qingcheng.service.goods.CategoryService;
 import com.qingcheng.service.goods.SpuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +21,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +36,8 @@ public class ItemController {
     @Reference
     private SpuService spuService;
 
+    @Reference
+    private CategoryService categoryService;
 
     @Value("${item.pagePath}")  //此标签可以通过properties中获取数据
     private String pagePath;
@@ -54,12 +59,23 @@ public class ItemController {
         List<Sku> skuList = goods.getSkuList();
 
 
+        // 商品分类数据
+        List<String> categoryNameList = new ArrayList<String>();
+        String categoryName1 = this.categoryService.findById(spu.getCategory1Id()).getName();
+        String categoryName2 = this.categoryService.findById(spu.getCategory2Id()).getName();
+        String categoryName3 = this.categoryService.findById(spu.getCategory3Id()).getName();
+
+        categoryNameList.add(categoryName1);
+        categoryNameList.add(categoryName2);
+        categoryNameList.add(categoryName3);
+
         for (Sku sku:skuList){
 
             // 创建数据模型Map
             Map<String, Object> dataModel = new HashMap();
-            dataModel.put("spu",spu);
-            dataModel.put("sku",sku);
+            dataModel.put("spu",spu); // spu信息
+            dataModel.put("sku",sku); // sku信息
+            dataModel.put("categoryNameList",categoryNameList); // 分类信息
 
             Context context = new Context(); // 创建上下文
             context.setVariables(dataModel); // 设置数据模型
