@@ -1,6 +1,7 @@
 package com.qingcheng.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.fastjson.JSON;
 import com.qingcheng.entity.Result;
 import com.qingcheng.pojo.goods.Category;
 import com.qingcheng.pojo.goods.Goods;
@@ -61,7 +62,7 @@ public class ItemController {
         String categoryName1 = this.categoryService.findById(spu.getCategory1Id()).getName();
         String categoryName2 = this.categoryService.findById(spu.getCategory2Id()).getName();
         String categoryName3 = this.categoryService.findById(spu.getCategory3Id()).getName();
-
+        // 添加顺序不能乱
         categoryNameList.add(categoryName1);
         categoryNameList.add(categoryName2);
         categoryNameList.add(categoryName3);
@@ -70,7 +71,22 @@ public class ItemController {
         // spu商品图片
         List<String> spuImages = Arrays.asList(spu.getImages().split(","));// 拆分images 并且用逗号区分
 
+        // spuParaItem参数,需要加入判断
+        String paraItems = spu.getParaItems();
+        Map spuParaItems = null;
+        if (paraItems!=null&& !"".equals(paraItems)){
+            spuParaItems = JSON.parseObject(paraItems, Map.class); // 转换json
+        }
+
+
         for (Sku sku:skuList){
+
+            // skuSpec参数,需要加入不为空的判断
+            String spec = sku.getSpec();
+            Map skuSpecs = null;
+            if (spec!=null&&!"".equals(spec)){
+                skuSpecs = JSON.parseObject(spec, Map.class); // 转换json
+            }
 
             // sku 图片
             List<String> skuImages = Arrays.asList(sku.getImages().split(",")); // 图片列表
@@ -86,6 +102,9 @@ public class ItemController {
             dataModel.put("sku",sku); // sku信息
             dataModel.put("categoryNameList",categoryNameList); // 分类信息
             dataModel.put("images",imagesList);// 图片列表
+            dataModel.put("spuParas",spuParaItems); // spu 参数列表
+            dataModel.put("skuSpecs",skuSpecs);  // sku 参数列表
+
 
             Context context = new Context(); // 创建上下文
             context.setVariables(dataModel); // 设置数据模型
