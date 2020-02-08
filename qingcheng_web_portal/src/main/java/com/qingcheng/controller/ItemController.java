@@ -21,10 +21,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 处理商品详情页的请求
@@ -69,13 +66,26 @@ public class ItemController {
         categoryNameList.add(categoryName2);
         categoryNameList.add(categoryName3);
 
+
+        // spu商品图片
+        List<String> spuImages = Arrays.asList(spu.getImages().split(","));// 拆分images 并且用逗号区分
+
         for (Sku sku:skuList){
+
+            // sku 图片
+            List<String> skuImages = Arrays.asList(sku.getImages().split(",")); // 图片列表
+
+            // 保存图片
+            List<String> imagesList = new ArrayList<String>();
+            imagesList.addAll(skuImages);
+            imagesList.addAll(spuImages);
 
             // 创建数据模型Map
             Map<String, Object> dataModel = new HashMap();
             dataModel.put("spu",spu); // spu信息
             dataModel.put("sku",sku); // sku信息
             dataModel.put("categoryNameList",categoryNameList); // 分类信息
+            dataModel.put("images",imagesList);// 图片列表
 
             Context context = new Context(); // 创建上下文
             context.setVariables(dataModel); // 设置数据模型

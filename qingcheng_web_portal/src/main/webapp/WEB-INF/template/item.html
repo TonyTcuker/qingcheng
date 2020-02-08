@@ -1830,7 +1830,8 @@
 						<!--默认第一个预览-->
 						<div id="preview" class="spec-preview">
 							<span class="jqzoom">
-								<img jqimg="./img/_/b1.png" src="./img/_/s1.png" />
+								<!-- 默认图片 -->
+								<img style="width: 400px;height: 400px" th:jqimg="${sku.image}" th:src="${sku.image}" />
 							</span>
 						</div>
 						<!--下方的缩略图-->
@@ -1839,32 +1840,9 @@
 							<!--左右按钮-->
 							<div class="items">
 								<ul>
-									<li>
-										<img src="./img/_/s1.png" bimg="./img/_/b1.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s2.png" bimg="./img/_/b2.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s3.png" bimg="./img/_/b3.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s1.png" bimg="./img/_/b1.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s2.png" bimg="./img/_/b2.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s3.png" bimg="./img/_/b3.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s1.png" bimg="./img/_/b1.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s2.png" bimg="./img/_/b2.png" onmousemove="preview(this)" />
-									</li>
-									<li>
-										<img src="./img/_/s3.png" bimg="./img/_/b3.png" onmousemove="preview(this)" />
+									<!-- 下方微缩图片 -->
+									<li th:each="image:${images}">
+										<img th:src="${image}" th:bimg="${image}" onmousemove="preview(this)" />
 									</li>
 								</ul>
 							</div>

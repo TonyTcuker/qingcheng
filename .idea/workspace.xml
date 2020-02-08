@@ -6,21 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="完成静态页面-基本信息渲染">
-      <change afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/item.html" afterDir="false" />
+    <list default="true" id="ddefdb3c-3bda-46b8-8578-564716fc3007" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_business/target/qingcheng_service_business-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/src/main/java/com/qingcheng/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/src/main/java/com/qingcheng/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/service/impl/CategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_service_goods/target/qingcheng_service_goods-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/java/com/qingcheng/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/src/main/webapp/WEB-INF/template/item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/classes/com/qingcheng/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/classes/com/qingcheng/controller/ItemController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/classes/com/qingcheng/controller/ItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/lib/qingcheng_interface-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/template/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/WEB-INF/template/item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qingcheng_web_portal/target/qingcheng_web_portal-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -845,6 +837,16 @@
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7aaa49b8" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7aaa49b8" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3be2c792" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7aaa49b8" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3e60654d" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
           </expand>
           <select />
         </treeState>
@@ -908,7 +910,7 @@
       <workItem from="1580974418675" duration="632000" />
       <workItem from="1580985293217" duration="722000" />
       <workItem from="1581062251890" duration="1613000" />
-      <workItem from="1581145334132" duration="3062000" />
+      <workItem from="1581145334132" duration="8225000" />
     </task>
     <task id="LOCAL-00001" summary="第8章 菜单控制 功能 【完成】">
       <created>1580032346853</created>
@@ -952,7 +954,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580974512955</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完成静态页面-商品分类面包屑渲染">
+      <created>1581148546384</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1581148546384</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -989,7 +998,8 @@
     <MESSAGE value="完成广告列表的查询 findByPosition" />
     <MESSAGE value="完成首页分类导航后端代码" />
     <MESSAGE value="完成静态页面-基本信息渲染" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成静态页面-基本信息渲染" />
+    <MESSAGE value="完成静态页面-商品分类面包屑渲染" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成静态页面-商品分类面包屑渲染" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
